@@ -281,11 +281,11 @@ static U8 instr_handle_key(U8 key)
             switch_to_box(PHRASE_BOX);
             return 1;
 
-        case CH_MYLEFT:
+        case CH_CURS_LEFT:
             cur_left();
             return 1;
 
-        case CH_MYRIGHT:
+        case CH_CURS_RIGHT:
             cur_right();
             return 1;
 

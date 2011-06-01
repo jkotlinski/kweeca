@@ -39,16 +39,11 @@ enum special_keys {
     CH_SHIFT = 0x80u
 };
 
-#define CH_MYLEFT ':'
-#define CH_MYDOWN ';'
-#define CH_MYUP '@'
-#define CH_MYRIGHT '='
-
 #define CH_SCREEN_LEFT 'p'
 #define CH_SCREEN_RIGHT '*'
 
-#define CH_MYDOWN_SHIFTED ']'
-#define CH_MYUP_SHIFTED 0xbau
+// #define CH_MYDOWN_SHIFTED ']'
+// #define CH_MYUP_SHIFTED 0xbau
 
 void poll_special_keys();
 
