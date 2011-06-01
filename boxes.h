@@ -25,11 +25,11 @@ THE SOFTWARE. */
 #include "box_data.h"
 
 typedef enum {
-	SONG_BOX,
-	CHAIN_BOX,
-	PHRASE_BOX,
-	INSTR_BOX,
-	BOX_COUNT
+    SONG_BOX,
+    CHAIN_BOX,
+    PHRASE_BOX,
+    INSTR_BOX,
+    BOX_COUNT
 } BOX_ID;
 extern U8 g_cur_box;
 

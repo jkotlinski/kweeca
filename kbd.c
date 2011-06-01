@@ -34,45 +34,45 @@ void handle_key(U8 key); // defined in kweeca.c
 
 void poll_special_keys()
 {
-	U8 right_shift;
-	static U8 s_last_tick_was_tweak;
-	
-	ROW(6);
-	right_shift = COL(4);
+    U8 right_shift;
+    static U8 s_last_tick_was_tweak;
 
-	ROW(1);
-	KEY_SHIFT = right_shift || COL(7); // left shift
-	
-	ROW(7);
-	KEY_SPACE = COL(4);
+    ROW(6);
+    right_shift = COL(4);
 
-	if (KEY_SPACE)
-	{
-		U8 tweak_key = 0;
-		ROW(5);
-		if (COL(5)) tweak_key = CH_TWEAK_LEFT; // :
-		else if (COL(6)) tweak_key = CH_TWEAK_UP; // @
-		else {
-			ROW(6);
-			if (COL(2)) tweak_key = CH_TWEAK_DOWN; // ;
-			else if (COL(5)) tweak_key = CH_TWEAK_RIGHT; // =
-		}
+    ROW(1);
+    KEY_SHIFT = right_shift || COL(7); // left shift
+    
+    ROW(7);
+    KEY_SPACE = COL(4);
+
+    if (KEY_SPACE)
+    {
+        U8 tweak_key = 0;
+        ROW(5);
+        if (COL(5)) tweak_key = CH_TWEAK_LEFT; // :
+        else if (COL(6)) tweak_key = CH_TWEAK_UP; // @
+        else {
+            ROW(6);
+            if (COL(2)) tweak_key = CH_TWEAK_DOWN; // ;
+            else if (COL(5)) tweak_key = CH_TWEAK_RIGHT; // =
+        }
       
-		if (tweak_key)
-		{
-			if (!s_last_tick_was_tweak) // No key repeat for now, change this later?
-			{
-				handle_key(tweak_key);
-				s_last_tick_was_tweak = 1;
-			}
-		}
-		else
-			s_last_tick_was_tweak = 0;
-	}
-	else
-		s_last_tick_was_tweak = 0;
-	
-	CIA1.pra = 0;
+        if (tweak_key)
+        {
+            if (!s_last_tick_was_tweak) // No key repeat for now, change this later?
+            {
+                handle_key(tweak_key);
+                s_last_tick_was_tweak = 1;
+            }
+        }
+        else
+            s_last_tick_was_tweak = 0;
+    }
+    else
+        s_last_tick_was_tweak = 0;
+    
+    CIA1.pra = 0;
 }
 
 

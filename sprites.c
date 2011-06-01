@@ -23,13 +23,13 @@ THE SOFTWARE. */
 #define l 0x80
 #define R 0
 const char cursor_1char[64] = { 
-	0, 0, R,
-	L, 0, R,
-	L, 0, R,
-	L, 0, R,
-	L, 0, R,
-	L, 0, R,
-	0, 0, R,
-	0, 0, R,
+    0, 0, R,
+    L, 0, R,
+    L, 0, R,
+    L, 0, R,
+    L, 0, R,
+    L, 0, R,
+    0, 0, R,
+    0, 0, R,
 };
 

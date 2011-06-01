@@ -33,24 +33,24 @@ THE SOFTWARE. */
 
 void draw_border(U8 x1, U8 y1, U8 x2, U8 y2, U8 active)
 {
-	U8 xi = x1 + 1;
-	U8 yi = y1 + 1;
-	U8 ycount = 0;
-	textcolor(active ? COLOR_LIGHTBLUE : COLOR_INACTIVE);
-	while (xi < x2)
-	{
-		// cputcxy(xi, y1, HBAR);
-		cputcxy(xi, y2, HBAR);
-		++xi;
-	}
-	while (yi <= y2)
-	{
-		U8 symbol = !(ycount & 3) ? CH_CROSS : 
-			!(ycount & 1) ? VBAR : ' ';
-		if (x1 < 0xf0u) // In case we write outside left border...
-			cputcxy(x1, yi, symbol);
-		cputcxy(x2, yi, symbol);
-		++ycount;
-		++yi;
-	}
+    U8 xi = x1 + 1;
+    U8 yi = y1 + 1;
+    U8 ycount = 0;
+    textcolor(active ? COLOR_LIGHTBLUE : COLOR_INACTIVE);
+    while (xi < x2)
+    {
+        // cputcxy(xi, y1, HBAR);
+        cputcxy(xi, y2, HBAR);
+        ++xi;
+    }
+    while (yi <= y2)
+    {
+        U8 symbol = !(ycount & 3) ? CH_CROSS : 
+            !(ycount & 1) ? VBAR : ' ';
+        if (x1 < 0xf0u) // In case we write outside left border...
+            cputcxy(x1, yi, symbol);
+        cputcxy(x2, yi, symbol);
+        ++ycount;
+        ++yi;
+    }
 }

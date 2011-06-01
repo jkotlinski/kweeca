@@ -31,18 +31,18 @@ const char* filename = "song";
 
 void load_song()
 {
-	show_status_msg(MSG_LOADING);
-	assert(MEM_SIZE == cbm_load(filename, 8, MEM_START));
-	assert(*DATA_VERSION == CURR_DATA_VERSION);
-	show_status_msg(MSG_OK);
+    show_status_msg(MSG_LOADING);
+    assert(MEM_SIZE == cbm_load(filename, 8, MEM_START));
+    assert(*DATA_VERSION == CURR_DATA_VERSION);
+    show_status_msg(MSG_OK);
 }
 
 void save_song()
 {
-	U8 status;
-	show_status_msg(MSG_SAVING);
-	remove(filename);
-	*DATA_VERSION = 0;
-	status = cbm_save(filename, 8, MEM_START, MEM_SIZE);
-	show_status_msg(status ? MSG_ERROR : MSG_OK);
+    U8 status;
+    show_status_msg(MSG_SAVING);
+    remove(filename);
+    *DATA_VERSION = 0;
+    status = cbm_save(filename, 8, MEM_START, MEM_SIZE);
+    show_status_msg(status ? MSG_ERROR : MSG_OK);
 }

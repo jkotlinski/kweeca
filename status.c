@@ -27,40 +27,40 @@ THE SOFTWARE. */
 
 static const char* const msgs[] =
 {
-	"\1kweeca " VERSION,
-	"\2out of mem. f3 = clean unused data",
-	"\1loading",
-	"\1saving",
-	"\1ok",
-	"\2error",
-	"\1marking",
-	"\1cut ok",
+    "\1kweeca " VERSION,
+    "\2out of mem. f3 = clean unused data",
+    "\1loading",
+    "\1saving",
+    "\1ok",
+    "\2error",
+    "\1marking",
+    "\1cut ok",
 };
 
 static void clear_status_line()
 {
-	U8 i;
-	gotoxy(0, 19);
-	for (i = 0; i < 40; ++i)
-		cputc(' ');
+    U8 i;
+    gotoxy(0, 19);
+    for (i = 0; i < 40; ++i)
+        cputc(' ');
 }
 
 static U8 status_counter;
 
 void show_status_msg(STATUS_MSG_ID id)
 {
-	const char* msg = msgs[id];
-	assert(id < MSG_COUNT);
-	clear_status_line();
-	textcolor(*msg);
-	gotoxy(0, 19);
-	cputs(msg + 1);
-	status_counter = 255;
+    const char* msg = msgs[id];
+    assert(id < MSG_COUNT);
+    clear_status_line();
+    textcolor(*msg);
+    gotoxy(0, 19);
+    cputs(msg + 1);
+    status_counter = 255;
 }
 
 void status_tick()
 {
-	if (!status_counter || --status_counter) return;
+    if (!status_counter || --status_counter) return;
 
-	clear_status_line();
+    clear_status_line();
 }

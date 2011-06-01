@@ -36,20 +36,20 @@ typedef void (*refresh_cursor_fn)();
 typedef void (*redraw_fn)();
 
 typedef struct {
-	const U8 column_count;
-	const U8 min_allowed_lift_col_2;
-	const U8* column_x;
-	const U8* column_w;
-	const handler_fn key_handler;
-	const cur_down_handler_fn cur_down_handler;
-	const cur_up_handler_fn cur_up_handler;
-	const tweak_handler_fn tweak_handler;
-	const lift_col_fn lift_col_handler;
-	const paste_col_fn paste_col_handler;
-	const paste_advance_row_fn paste_advance_row;
-	const y_pos_validator_fn y_pos_validator;
-	const refresh_cursor_fn refresh_cursor;
-	const redraw_fn redraw;
+    const U8 column_count;
+    const U8 min_allowed_lift_col_2;
+    const U8* column_x;
+    const U8* column_w;
+    const handler_fn key_handler;
+    const cur_down_handler_fn cur_down_handler;
+    const cur_up_handler_fn cur_up_handler;
+    const tweak_handler_fn tweak_handler;
+    const lift_col_fn lift_col_handler;
+    const paste_col_fn paste_col_handler;
+    const paste_advance_row_fn paste_advance_row;
+    const y_pos_validator_fn y_pos_validator;
+    const refresh_cursor_fn refresh_cursor;
+    const redraw_fn redraw;
 } BoxData;
 
 #endif

@@ -22,14 +22,14 @@ THE SOFTWARE. */
 
 U8 clamp_to_nibble(U8 byte)
 {
-	if (byte & 0x80) return 0;
-	else if (byte & 0x10u) return 0xf;
-	return byte;
+    if (byte & 0x80) return 0;
+    else if (byte & 0x10u) return 0xf;
+    return byte;
 }
 
 U8 clamp_to_byte(U16 word)
 {
-	if (word & 0x8000u) return 0;
-	else if (word & 0xff00u) return 0xff;
-	return word;
+    if (word & 0x8000u) return 0;
+    else if (word & 0xff00u) return 0xff;
+    return word;
 }

@@ -44,17 +44,17 @@ U8 g_space_tap_count;
 
 void sort(U8* a, U8* b)
 {
-	if (*a > *b)
-	{
-		U8 tmp = *a;
-		*a = *b;
-		*b = tmp;
-	}
-	assert(*a <= *b);
+    if (*a > *b)
+    {
+        U8 tmp = *a;
+        *a = *b;
+        *b = tmp;
+    }
+    assert(*a <= *b);
 }
 
 void so(U8 val)
 {
-	gotoxy(0, 0);
-	print_hex(val);
+    gotoxy(0, 0);
+    print_hex(val);
 }

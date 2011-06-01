@@ -29,14 +29,14 @@ extern U8 KEY_SHIFT;
 extern U8 KEY_SPACE;
 
 enum special_keys {
-	CH_CTRL = 1,
-	CH_TWEAK_UP,
-	// CH_LEFTARROW = 3
-	CH_TWEAK_DOWN = 4,
-	CH_TWEAK_RIGHT,
-	CH_TWEAK_LEFT,
-	CH_REFRESH, // Dummy key to refresh view.
-	CH_SHIFT = 0x80u
+    CH_CTRL = 1,
+    CH_TWEAK_UP,
+    // CH_LEFTARROW = 3
+    CH_TWEAK_DOWN = 4,
+    CH_TWEAK_RIGHT,
+    CH_TWEAK_LEFT,
+    CH_REFRESH, // Dummy key to refresh view.
+    CH_SHIFT = 0x80u
 };
 
 #define CH_MYLEFT ':'

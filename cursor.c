@@ -44,40 +44,40 @@ static U8 cursor_w = 1;
 
 static void draw_cursor(U8 invert)
 {
-	paint_box(cursor_x, cursor_y,
-			cursor_x + cursor_w - 1, 
-			cursor_y, invert);
+    paint_box(cursor_x, cursor_y,
+            cursor_x + cursor_w - 1, 
+            cursor_y, invert);
 }
 
 static void apply_cursor()
 {
-	draw_cursor(blink_status);
-	blink_delay = BLINK_DELAY;
+    draw_cursor(blink_status);
+    blink_delay = BLINK_DELAY;
 }
 
 static void reset_blink()
 {
-	blink_status = 1;
-	apply_cursor();
+    blink_status = 1;
+    apply_cursor();
 }
 
 void move_cursor(U8 col, U8 row, U8 w)
 {
-	if (cursor_x == col && cursor_y == row && cursor_w == w)
-		return;
-	draw_cursor(0);
-	cursor_x = col;
-	cursor_y = row;
-	cursor_w = w;
-	draw_cursor(1);
+    if (cursor_x == col && cursor_y == row && cursor_w == w)
+        return;
+    draw_cursor(0);
+    cursor_x = col;
+    cursor_y = row;
+    cursor_w = w;
+    draw_cursor(1);
 }
 
 void cursor_tick()
 {
-	if (blink_delay--)
-		return;
-	blink_status ^= 1;
-	apply_cursor();
+    if (blink_delay--)
+        return;
+    blink_status ^= 1;
+    apply_cursor();
 }
 
 // ----------- Marking.
@@ -86,39 +86,39 @@ void cursor_tick()
 
 static void paint_mark(U8 invert)
 {
-	U8 col = MIN(g_clip_x1, g_clip_x2);
-	const U8 col_max = MAX(g_clip_x1, g_clip_x2);
-	const U8 y_offset = cursor_y_offset();
-	U8 row_min = MIN(g_clip_y1, g_clip_y2) - y_offset;
-	U8 row_max = MAX(g_clip_y1, g_clip_y2) - y_offset;
-	if (0xf0u == (row_min & 0xf0u))
-		row_min = 0;
-	if (row_max & 0xf0u)
-		row_max = 0xf;
-	row_min += TOP_Y;
-	row_max += TOP_Y;
+    U8 col = MIN(g_clip_x1, g_clip_x2);
+    const U8 col_max = MAX(g_clip_x1, g_clip_x2);
+    const U8 y_offset = cursor_y_offset();
+    U8 row_min = MIN(g_clip_y1, g_clip_y2) - y_offset;
+    U8 row_max = MAX(g_clip_y1, g_clip_y2) - y_offset;
+    if (0xf0u == (row_min & 0xf0u))
+        row_min = 0;
+    if (row_max & 0xf0u)
+        row_max = 0xf;
+    row_min += TOP_Y;
+    row_max += TOP_Y;
 
-	while (col <= col_max)
-	{
-		const U8 x = g_cur_box_data->column_x[col];
-		const U8 w = g_cur_box_data->column_w[col];
-		paint_box(x, row_min, x + w - 1, row_max, invert);
-		++col;
-	}
+    while (col <= col_max)
+    {
+        const U8 x = g_cur_box_data->column_x[col];
+        const U8 w = g_cur_box_data->column_w[col];
+        paint_box(x, row_min, x + w - 1, row_max, invert);
+        ++col;
+    }
 }
 
 void clear_mark()
 {
-	paint_mark(0);
+    paint_mark(0);
 }
 
 void refresh_mark()
 {
-	if (!g_marking) return;
-	paint_mark(0);
-	g_clip_x2 = CUR_COL;
-	g_clip_y2 = CUR_ROW;
-	paint_mark(1);
+    if (!g_marking) return;
+    paint_mark(0);
+    g_clip_x2 = CUR_COL;
+    g_clip_y2 = CUR_ROW;
+    paint_mark(1);
 }
 
 // ----- Play indicators.
@@ -126,12 +126,12 @@ void refresh_mark()
 #include "player.h"
 
 enum {
-	PI_SONG0,
-	PI_SONG1,
-	PI_SONG2,
-	PI_CHAIN,
-	PI_PHRASE,
-	PI_COUNT
+    PI_SONG0,
+    PI_SONG1,
+    PI_SONG2,
+    PI_CHAIN,
+    PI_PHRASE,
+    PI_COUNT
 };
 
 #define PI_SONG_X0 VIC.spr0_x
@@ -142,26 +142,26 @@ enum {
 
 void init_play_indicators()
 {
-	U8 it;
+    U8 it;
 
-	// Change screen X offset, to give some space for sprites to the left of column 0.
-	VIC.ctrl2 |= 2; 
+    // Change screen X offset, to give some space for sprites to the left of column 0.
+    VIC.ctrl2 |= 2; 
 
-	for (it = 0; it < PI_COUNT; ++it)
-	{
-		(&VIC.spr0_color)[it] = COLOR_YELLOW;
-		*(U8*)(0x7f8 + it) = (SPRITE_OFFSET >> 6);
-	}	
+    for (it = 0; it < PI_COUNT; ++it)
+    {
+        (&VIC.spr0_color)[it] = COLOR_YELLOW;
+        *(U8*)(0x7f8 + it) = (SPRITE_OFFSET >> 6);
+    }   
 #define SCREEN_LEFT 0x18
 #define SCREEN_TOP 0x32
 #define SPRITE_X_FROM_COL(c) ((c) * 8 + SCREEN_LEFT)
-	PI_SONG_X0 = SPRITE_X_FROM_COL(0);
-	PI_SONG_X1 = SPRITE_X_FROM_COL(3);
-	PI_SONG_X2 = SPRITE_X_FROM_COL(6);
-	PI_CHAIN_X = SPRITE_X_FROM_COL(CHAIN_X + 1);
-	PI_PHRASE_X = SPRITE_X_FROM_COL(PHRASE_X + 1);
+    PI_SONG_X0 = SPRITE_X_FROM_COL(0);
+    PI_SONG_X1 = SPRITE_X_FROM_COL(3);
+    PI_SONG_X2 = SPRITE_X_FROM_COL(6);
+    PI_CHAIN_X = SPRITE_X_FROM_COL(CHAIN_X + 1);
+    PI_PHRASE_X = SPRITE_X_FROM_COL(PHRASE_X + 1);
 
-	VIC.spr_hi_x = 0;
+    VIC.spr_hi_x = 0;
 }
 
 #define PI_SONG_Y0 VIC.spr0_y
@@ -172,44 +172,44 @@ void init_play_indicators()
 
 static U8 song_y_to_screen(U8 ch)
 {
-	U8 row = (int)(SONG_CHAIN_PTR[ch] - ch) / 3;
-	return SCREEN_TOP + 8 * (1 + row - g_song_y_offset);
+    U8 row = (int)(SONG_CHAIN_PTR[ch] - ch) / 3;
+    return SCREEN_TOP + 8 * (1 + row - g_song_y_offset);
 }
 
 void play_indicator_tick()
 {
-	VIC.spr_ena = 0;
-	if (!g_playing)
-		return;
-	switch (PLAYMODE)
-	{
-		case PLAYMODE_SONG:
-			if (CH_ACTIVE[0])
-			{
-				PI_SONG_Y0 = song_y_to_screen(0);
-				VIC.spr_ena |= (1 << PI_SONG0);
-			}
-			if (CH_ACTIVE[1]) 
-			{
-				PI_SONG_Y1 = song_y_to_screen(1);
-				VIC.spr_ena |= (1 << PI_SONG1);
-			}
-			if (CH_ACTIVE[2]) 
-			{
-				PI_SONG_Y2 = song_y_to_screen(2);
-				VIC.spr_ena |= (1 << PI_SONG2);
-			}
-		case PLAYMODE_CHAIN:
-			if (CH_ACTIVE[EDIT_CH] && ACTIVE_CHAIN[EDIT_CH] == VIEW_CHAIN)
-			{
-				VIC.spr_ena |= 1 << PI_CHAIN;
-				PI_CHAIN_Y = SCREEN_TOP + 8 * (1 + (CHAIN_PHRASE_PTR_LSB[EDIT_CH] & 0xf));
-			}
-		default: // = phrase
-			if (CH_ACTIVE[EDIT_CH] && ACTIVE_PHRASE[EDIT_CH] == VIEW_PHRASE)
-			{
-				VIC.spr_ena |= 1 << PI_PHRASE;
-				PI_PHRASE_Y = SCREEN_TOP + 8 * (1 + (PHRASE_NOTE_PTR_LSB[EDIT_CH] & 0xf));
-			}
-	}
+    VIC.spr_ena = 0;
+    if (!g_playing)
+        return;
+    switch (PLAYMODE)
+    {
+        case PLAYMODE_SONG:
+            if (CH_ACTIVE[0])
+            {
+                PI_SONG_Y0 = song_y_to_screen(0);
+                VIC.spr_ena |= (1 << PI_SONG0);
+            }
+            if (CH_ACTIVE[1]) 
+            {
+                PI_SONG_Y1 = song_y_to_screen(1);
+                VIC.spr_ena |= (1 << PI_SONG1);
+            }
+            if (CH_ACTIVE[2]) 
+            {
+                PI_SONG_Y2 = song_y_to_screen(2);
+                VIC.spr_ena |= (1 << PI_SONG2);
+            }
+        case PLAYMODE_CHAIN:
+            if (CH_ACTIVE[EDIT_CH] && ACTIVE_CHAIN[EDIT_CH] == VIEW_CHAIN)
+            {
+                VIC.spr_ena |= 1 << PI_CHAIN;
+                PI_CHAIN_Y = SCREEN_TOP + 8 * (1 + (CHAIN_PHRASE_PTR_LSB[EDIT_CH] & 0xf));
+            }
+        default: // = phrase
+            if (CH_ACTIVE[EDIT_CH] && ACTIVE_PHRASE[EDIT_CH] == VIEW_PHRASE)
+            {
+                VIC.spr_ena |= 1 << PI_PHRASE;
+                PI_PHRASE_Y = SCREEN_TOP + 8 * (1 + (PHRASE_NOTE_PTR_LSB[EDIT_CH] & 0xf));
+            }
+    }
 }

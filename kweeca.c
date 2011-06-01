@@ -37,88 +37,88 @@ THE SOFTWARE. */
 
 void wait_frame()
 {
-	while (VIC.rasterline != 0x40);
-	while (VIC.rasterline == 0x40);
+    while (VIC.rasterline != 0x40);
+    while (VIC.rasterline == 0x40);
 }
 
 void beep()
 {
-	SID.v1.ctrl = 0x41;
-	SID.v2.ctrl = 0x41;
+    SID.v1.ctrl = 0x41;
+    SID.v2.ctrl = 0x41;
 }
 
 void mute()
 {
-	SID.v1.ctrl = 0x40;
-	SID.v2.ctrl = 0x40;
+    SID.v1.ctrl = 0x40;
+    SID.v2.ctrl = 0x40;
 }
 
 void init()
 {
-	clrscr();
-	player_init();
-	init_mem();
-	startirq();
-	*(U8*)0xd018 = 0x14; // Use upper case + gfx chars.
-	VIC.bgcolor0 = COLOR_BLACK;
-	VIC.bordercolor = COLOR_BLACK;
-	*(U8*)0x28a = 0x80; // Repeat all keys.
-	textcolor(COLOR_YELLOW);
-	reset_boxes();
-	show_status_msg(MSG_HELLO);
-	init_play_indicators();
+    clrscr();
+    player_init();
+    init_mem();
+    startirq();
+    *(U8*)0xd018 = 0x14; // Use upper case + gfx chars.
+    VIC.bgcolor0 = COLOR_BLACK;
+    VIC.bordercolor = COLOR_BLACK;
+    *(U8*)0x28a = 0x80; // Repeat all keys.
+    textcolor(COLOR_YELLOW);
+    reset_boxes();
+    show_status_msg(MSG_HELLO);
+    init_play_indicators();
 }
 
 #include "print.h"
 
 void handle_key(U8 key)
 {
-	switch (key)
-	{
-		case CH_F5:
-			load_song();
-			reset_boxes();
-			return;
+    switch (key)
+    {
+        case CH_F5:
+            load_song();
+            reset_boxes();
+            return;
 
-		case CH_F7:
-			save_song();
-			return;
-	}
+        case CH_F7:
+            save_song();
+            return;
+    }
 
-	boxes_handle_key(key);
-	reset_blink();
+    boxes_handle_key(key);
+    reset_blink();
 }
 
 void tick()
 {
-	U8 prev_key_space = KEY_SPACE;
-	if (kbhit())
-	{
-		const U8 ch = cgetc();
-		const U8 is_repeated_space = (ch == ' ' && KEY_SPACE);
-		if (!is_repeated_space)
-		{
-			handle_key(ch);
-		}
-	}
-	poll_special_keys();
-	if (prev_key_space && !KEY_SPACE && release_space_handler_p)
-		release_space_handler_p();
-	cursor_tick();
-	play_indicator_tick();
-	status_tick();
+    U8 prev_key_space = KEY_SPACE;
+    if (kbhit())
+    {
+        const U8 ch = cgetc();
+        const U8 is_repeated_space = (ch == ' ' && KEY_SPACE);
+        if (!is_repeated_space)
+        {
+            handle_key(ch);
+        }
+    }
+    poll_special_keys();
+    if (prev_key_space && !KEY_SPACE && release_space_handler_p)
+        release_space_handler_p();
+    cursor_tick();
+    play_indicator_tick();
+    status_tick();
 }
 
 int main()
 {
-	init();
+    init();
 
-	for (;;)
-	{
-		while (!g_ticks); // Wait for tick.
-		tick();
-		g_ticks--; // Only decreased here.
-	}
-	return 0;
+    for (;;)
+    {
+        while (!g_ticks); // Wait for tick.
+        tick();
+        g_ticks--; // Only decreased here.
+    }
+    return 0;
 }
 

@@ -27,18 +27,18 @@ THE SOFTWARE. */
 // sizeof(INSTR) must be less than 0x10!
 typedef struct
 {
-	U8 ad;
-	U8 h;
-	U8 sr;
-	U8 pw;
-	U8 vctl; // d404
+    U8 ad;
+    U8 h;
+    U8 sr;
+    U8 pw;
+    U8 vctl; // d404
 
-	U8 flt_cutoff; // filter cutoff
-	U8 flt_mode; // filter mode + volume
-	U8 flt_q; // filter resonance ctl
+    U8 flt_cutoff; // filter cutoff
+    U8 flt_mode; // filter mode + volume
+    U8 flt_q; // filter resonance ctl
 
-	unsigned int table : 4;
-	unsigned int automate : 1;
+    unsigned int table : 4;
+    unsigned int automate : 1;
 } Instr;
 
 extern const BoxData k_instr_box_data;

@@ -24,15 +24,15 @@ THE SOFTWARE. */
 #include "types.h"
 
 typedef enum {
-	MSG_HELLO,
-	MSG_ALLOC_OUT_OF_RAM,
-	MSG_LOADING,
-	MSG_SAVING,
-	MSG_OK,
-	MSG_ERROR,
-	MSG_MARKING,
-	MSG_LIFT_OK,
-	MSG_COUNT
+    MSG_HELLO,
+    MSG_ALLOC_OUT_OF_RAM,
+    MSG_LOADING,
+    MSG_SAVING,
+    MSG_OK,
+    MSG_ERROR,
+    MSG_MARKING,
+    MSG_LIFT_OK,
+    MSG_COUNT
 } STATUS_MSG_ID;
 
 void show_status_msg(STATUS_MSG_ID id);
