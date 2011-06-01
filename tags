@@ -1,0 +1,605 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACTIVE_CHAIN	player_c.c	/^U8 ACTIVE_CHAIN[3];$/;"	v
+ACTIVE_PHRASE	player_c.c	/^U8 ACTIVE_PHRASE[3];$/;"	v
+ARG_COL	phrase.c	/^#define ARG_COL /;"	d	file:
+AS	Makefile	/^AS	= ca65 --cpu 6502x # -l$/;"	m
+B7	phrase.c	/^#define B7 /;"	d	file:
+BLINK_DELAY	cursor.c	/^#define BLINK_DELAY /;"	d	file:
+BOOL_OFF	instr.c	/^#define BOOL_OFF /;"	d	file:
+BOOL_ON	instr.c	/^#define BOOL_ON /;"	d	file:
+BOTTOMLEFT	border.c	/^#define BOTTOMLEFT /;"	d	file:
+BOTTOMRIGHT	border.c	/^#define BOTTOMRIGHT /;"	d	file:
+BOX_COUNT	boxes.h	/^	BOX_COUNT$/;"	e	enum:__anon2
+BOX_ID	boxes.h	/^} BOX_ID;$/;"	t	typeref:enum:__anon2
+BoxData	box_data.h	/^} BoxData;$/;"	t	typeref:struct:__anon1
+C1541	Makefile	/^C1541  	= ~\/bin\/c1541$/;"	m
+C3	phrase.c	/^#define C3 /;"	d	file:
+CBoth	instr.c	/^	CBoth$/;"	e	enum:__anon5	file:
+CC	Makefile	/^CC	= cc65 -O --create-dep -Cl -tc64 -T -I $(CC65BASE)\/include\/ $/;"	m
+CC65BASE	Makefile	/^CC65BASE = \/usr\/local\/lib\/cc65$/;"	m
+CHAIN_ALLOC_TABLE	mem.h	/^#define CHAIN_ALLOC_TABLE /;"	d
+CHAIN_BOX	boxes.h	/^	CHAIN_BOX,$/;"	e	enum:__anon2
+CHAIN_BOX_HEIGHT	chain.c	/^#define CHAIN_BOX_HEIGHT /;"	d	file:
+CHAIN_BOX_WIDTH	chain.c	/^#define CHAIN_BOX_WIDTH /;"	d	file:
+CHAIN_COUNT	mem.h	/^#define CHAIN_COUNT /;"	d
+CHAIN_OFFSET	chain.c	/^static U16 CHAIN_OFFSET;$/;"	v	file:
+CHAIN_PHRASES	mem.h	/^#define CHAIN_PHRASES /;"	d
+CHAIN_PHRASE_PTR_LSB	player_c.c	/^U8 CHAIN_PHRASE_PTR_LSB[3];$/;"	v
+CHAIN_PHRASE_PTR_MSB	player_c.c	/^static U8 CHAIN_PHRASE_PTR_MSB[3];$/;"	v	file:
+CHAIN_TRANSPOSE	player_c.c	/^U8 CHAIN_TRANSPOSE[3];$/;"	v
+CHAIN_TRANSPOSES	mem.h	/^#define CHAIN_TRANSPOSES /;"	d
+CHAIN_TSP_PTR_LSB	player_c.c	/^static U8 CHAIN_TSP_PTR_LSB[3];$/;"	v	file:
+CHAIN_TSP_PTR_MSB	player_c.c	/^static U8 CHAIN_TSP_PTR_MSB[3];$/;"	v	file:
+CHAIN_X	defines.h	/^#define CHAIN_X /;"	d
+CHAIN_Y	defines.h	/^#define CHAIN_Y /;"	d
+CH_CTRL	kbd.h	/^	CH_CTRL = 1,$/;"	e	enum:special_keys
+CH_LEFTARROW	defines.h	/^#define CH_LEFTARROW /;"	d
+CH_MYDOWN	kbd.h	/^#define CH_MYDOWN /;"	d
+CH_MYDOWN_SHIFTED	kbd.h	/^#define CH_MYDOWN_SHIFTED /;"	d
+CH_MYLEFT	kbd.h	/^#define CH_MYLEFT /;"	d
+CH_MYRIGHT	kbd.h	/^#define CH_MYRIGHT /;"	d
+CH_MYUP	kbd.h	/^#define CH_MYUP /;"	d
+CH_MYUP_SHIFTED	kbd.h	/^#define CH_MYUP_SHIFTED /;"	d
+CH_REFRESH	kbd.h	/^	CH_REFRESH, \/\/ Dummy key to refresh view.$/;"	e	enum:special_keys
+CH_SCREEN_LEFT	kbd.h	/^#define CH_SCREEN_LEFT /;"	d
+CH_SCREEN_RIGHT	kbd.h	/^#define CH_SCREEN_RIGHT /;"	d
+CH_SHIFT	kbd.h	/^	CH_SHIFT = 0x80u$/;"	e	enum:special_keys
+CH_TWEAK_DOWN	kbd.h	/^	CH_TWEAK_DOWN = 4,$/;"	e	enum:special_keys
+CH_TWEAK_LEFT	kbd.h	/^	CH_TWEAK_LEFT,$/;"	e	enum:special_keys
+CH_TWEAK_RIGHT	kbd.h	/^	CH_TWEAK_RIGHT,$/;"	e	enum:special_keys
+CH_TWEAK_UP	kbd.h	/^	CH_TWEAK_UP,$/;"	e	enum:special_keys
+CLIB	Makefile	/^CLIB	= $(CC65BASE)\/lib\/c64.lib$/;"	m
+CLIPBOARD_HEIGHT	global.h	/^#define CLIPBOARD_HEIGHT /;"	d
+CLeft	instr.c	/^	CLeft,$/;"	e	enum:__anon5	file:
+CMD_COL	phrase.c	/^#define CMD_COL /;"	d	file:
+CMD_COUNT	phrase.c	/^#define CMD_COUNT /;"	d	file:
+CMD_DELAY	player.s	/^CMD_DELAY = 0$/;"	d
+CMD_FILTER_MOD	player.s	/^CMD_FILTER_MOD = 1$/;"	d
+CMD_GROOVE	player.s	/^CMD_GROOVE = 2$/;"	d
+COL	kbd.c	/^#define COL(/;"	d	file:
+COL1_Y	instr.c	/^#define COL1_Y /;"	d	file:
+COL2X	instr.c	/^#define COL2X /;"	d	file:
+COLOR_INACTIVE	defines.h	/^#define COLOR_INACTIVE /;"	d
+COLOR_TITLE	defines.h	/^#define COLOR_TITLE /;"	d
+COLUMN_COUNT	boxes.h	/^#define COLUMN_COUNT /;"	d
+COL_COUNT	phrase.c	/^#define COL_COUNT /;"	d	file:
+CRT0	Makefile	/^CRT0   	= $(CC65BASE)\/lib\/c64.o$/;"	m
+CRight	instr.c	/^	CRight,$/;"	e	enum:__anon5	file:
+CURR_DATA_VERSION	mem.h	/^#define CURR_DATA_VERSION /;"	d
+CUR_COL	boxes.h	/^#define CUR_COL /;"	d
+CUR_COL_CHAIN	boxes.h	/^#define CUR_COL_CHAIN /;"	d
+CUR_COL_PHRASE	boxes.h	/^#define CUR_COL_PHRASE /;"	d
+CUR_COL_SONG	boxes.h	/^#define CUR_COL_SONG /;"	d
+CUR_ROW	boxes.h	/^#define CUR_ROW /;"	d
+CUR_ROW_CHAIN	boxes.h	/^#define CUR_ROW_CHAIN /;"	d
+CUR_ROW_PHRASE	boxes.h	/^#define CUR_ROW_PHRASE /;"	d
+CUR_ROW_SONG	boxes.h	/^#define CUR_ROW_SONG /;"	d
+CUR_SCREEN_ROW	chain.c	/^#define CUR_SCREEN_ROW /;"	d	file:
+Column	instr.c	/^} Column;$/;"	t	typeref:enum:__anon5	file:
+DATA_VERSION	mem.h	/^#define DATA_VERSION /;"	d
+DEPDIR	Makefile	/^DEPDIR = .dep$/;"	m
+EDIT_CH	defines.h	/^#define EDIT_CH /;"	d
+EXELIST	Makefile	/^EXELIST=skweee64$/;"	m
+EntryType	instr.c	/^} EntryType;$/;"	t	typeref:enum:__anon4	file:
+EtBool	instr.c	/^	EtBool,$/;"	e	enum:__anon4	file:
+EtByte	instr.c	/^	EtByte,$/;"	e	enum:__anon4	file:
+EtCount	instr.c	/^	EtCount$/;"	e	enum:__anon4	file:
+EtNibble	instr.c	/^	EtNibble,$/;"	e	enum:__anon4	file:
+FIELD_COUNT	instr.c	/^#define FIELD_COUNT /;"	d	file:
+Field	instr.c	/^} Field;$/;"	t	typeref:struct:__anon6	file:
+FieldAd	instr.c	/^	FieldAd,$/;"	e	enum:__anon7	file:
+FieldName	instr.c	/^	FieldName,$/;"	e	enum:__anon7	file:
+FieldSr	instr.c	/^	FieldSr$/;"	e	enum:__anon7	file:
+HBAR	border.c	/^#define HBAR /;"	d	file:
+HEXGET_ACTIVE	boxes.h	/^#define HEXGET_ACTIVE /;"	d
+HEXGET_DONE	boxes.h	/^#define HEXGET_DONE /;"	d
+HEXGET_IDLE	boxes.h	/^#define HEXGET_IDLE /;"	d
+INSTR_AD	player.s	/^INSTR_AD = _g_sid_src$/;"	d
+INSTR_ALLOC_TABLE	mem.h	/^#define INSTR_ALLOC_TABLE /;"	d
+INSTR_BOX	boxes.h	/^	INSTR_BOX,$/;"	e	enum:__anon2
+INSTR_COL	phrase.c	/^#define INSTR_COL /;"	d	file:
+INSTR_COUNT	mem.h	/^#define INSTR_COUNT /;"	d
+INSTR_H	player.s	/^INSTR_H = _g_sid_src + 2$/;"	d
+INSTR_PW	player.s	/^INSTR_PW = _g_sid_src + 4$/;"	d
+INSTR_SR	player.s	/^INSTR_SR = _g_sid_src + 1$/;"	d
+INSTR_START	mem.h	/^#define INSTR_START /;"	d
+INSTR_WF	player.s	/^INSTR_WF = _g_sid_src + 3$/;"	d
+IS_BOX_ACTIVE	boxes.h	/^#define IS_BOX_ACTIVE(/;"	d
+Instr	instr.h	/^} Instr;$/;"	t	typeref:struct:__anon8
+KEY_SHIFT	kbd.c	/^U8 KEY_SHIFT;$/;"	v
+KEY_SPACE	kbd.c	/^U8 KEY_SPACE;$/;"	v
+L	sprites.c	/^#define L /;"	d	file:
+L1	irq.s	/^L1: lda sp,x$/;"	l
+L2	irq.s	/^L2: lda zpsave,x$/;"	l
+LD	Makefile	/^LD	= ld65 -C skweee64.cfg -m skweee64.map -Ln skweee64.lbl $/;"	m
+MAX	defines.h	/^#define MAX(/;"	d
+MAX_NOTE	defines.h	/^#define MAX_NOTE /;"	d
+MAX_Y	instr.c	/^#define MAX_Y /;"	d	file:
+MAX_g_song_y_offset	song.c	/^#define MAX_g_song_y_offset /;"	d	file:
+MEM_SIZE	mem.h	/^#define MEM_SIZE /;"	d
+MEM_START	mem.h	/^#define MEM_START /;"	d
+MIN	defines.h	/^#define MIN(/;"	d
+MOVE16	alloc.c	/^#define MOVE16(/;"	d	file:
+MSG_ALLOC_OUT_OF_RAM	status.h	/^	MSG_ALLOC_OUT_OF_RAM,$/;"	e	enum:__anon9
+MSG_COUNT	status.h	/^	MSG_COUNT$/;"	e	enum:__anon9
+MSG_ERROR	status.h	/^	MSG_ERROR,$/;"	e	enum:__anon9
+MSG_HELLO	status.h	/^	MSG_HELLO,$/;"	e	enum:__anon9
+MSG_LIFT_OK	status.h	/^	MSG_LIFT_OK,$/;"	e	enum:__anon9
+MSG_LOADING	status.h	/^	MSG_LOADING,$/;"	e	enum:__anon9
+MSG_MARKING	status.h	/^	MSG_MARKING,$/;"	e	enum:__anon9
+MSG_OK	status.h	/^	MSG_OK,$/;"	e	enum:__anon9
+MSG_SAVING	status.h	/^	MSG_SAVING,$/;"	e	enum:__anon9
+NOTE_COL	phrase.c	/^#define NOTE_COL /;"	d	file:
+OBJS	Makefile	/^OBJS = skweee64.o phrase.o player.o border.o cursor.o print.o global.o irq.o alloc.o file.o mem.o chain.o song.o boxes.o status.o player_c.o kbd.o sprites.o instr.o math.o$/;"	m
+PHRASE_ALLOC_TABLE	mem.h	/^#define PHRASE_ALLOC_TABLE /;"	d
+PHRASE_ARGS	mem.h	/^#define PHRASE_ARGS /;"	d
+PHRASE_BOX	boxes.h	/^	PHRASE_BOX,$/;"	e	enum:__anon2
+PHRASE_BOX_HEIGHT	phrase.c	/^#define PHRASE_BOX_HEIGHT /;"	d	file:
+PHRASE_BOX_WIDTH	phrase.c	/^#define PHRASE_BOX_WIDTH /;"	d	file:
+PHRASE_CMDS	mem.h	/^#define PHRASE_CMDS /;"	d
+PHRASE_COL	chain.c	/^#define PHRASE_COL /;"	d	file:
+PHRASE_COUNT	mem.h	/^#define PHRASE_COUNT /;"	d
+PHRASE_INSTRS	mem.h	/^#define PHRASE_INSTRS /;"	d
+PHRASE_NOTES	mem.h	/^#define PHRASE_NOTES /;"	d
+PHRASE_OFFSET	phrase.c	/^static U16 PHRASE_OFFSET;$/;"	v	file:
+PHRASE_X	defines.h	/^#define PHRASE_X /;"	d
+PHRASE_Y	defines.h	/^#define PHRASE_Y /;"	d
+PI_CHAIN	cursor.c	/^	PI_CHAIN,$/;"	e	enum:__anon3	file:
+PI_CHAIN_X	cursor.c	/^#define PI_CHAIN_X /;"	d	file:
+PI_CHAIN_Y	cursor.c	/^#define PI_CHAIN_Y /;"	d	file:
+PI_COUNT	cursor.c	/^	PI_COUNT$/;"	e	enum:__anon3	file:
+PI_PHRASE	cursor.c	/^	PI_PHRASE,$/;"	e	enum:__anon3	file:
+PI_PHRASE_X	cursor.c	/^#define PI_PHRASE_X /;"	d	file:
+PI_PHRASE_Y	cursor.c	/^#define PI_PHRASE_Y /;"	d	file:
+PI_SONG0	cursor.c	/^	PI_SONG0,$/;"	e	enum:__anon3	file:
+PI_SONG1	cursor.c	/^	PI_SONG1,$/;"	e	enum:__anon3	file:
+PI_SONG2	cursor.c	/^	PI_SONG2,$/;"	e	enum:__anon3	file:
+PI_SONG_X0	cursor.c	/^#define PI_SONG_X0 /;"	d	file:
+PI_SONG_X1	cursor.c	/^#define PI_SONG_X1 /;"	d	file:
+PI_SONG_X2	cursor.c	/^#define PI_SONG_X2 /;"	d	file:
+PI_SONG_Y0	cursor.c	/^#define PI_SONG_Y0 /;"	d	file:
+PI_SONG_Y1	cursor.c	/^#define PI_SONG_Y1 /;"	d	file:
+PI_SONG_Y2	cursor.c	/^#define PI_SONG_Y2 /;"	d	file:
+PLAYMODE_CHAIN	player.h	/^#define PLAYMODE_CHAIN /;"	d
+PLAYMODE_CHAIN	player.s	/^PLAYMODE_CHAIN = 1$/;"	d
+PLAYMODE_PHRASE	player.h	/^#define PLAYMODE_PHRASE /;"	d
+PLAYMODE_PHRASE	player.s	/^PLAYMODE_PHRASE = 2$/;"	d
+PLAYMODE_SONG	player.h	/^#define PLAYMODE_SONG /;"	d
+PLAYMODE_SONG	player.s	/^PLAYMODE_SONG = 0$/;"	d
+R	sprites.c	/^#define R /;"	d	file:
+ROW	kbd.c	/^#define ROW(/;"	d	file:
+S16	types.h	/^typedef signed int S16;$/;"	t
+S8	types.h	/^typedef signed char S8;$/;"	t
+SCREEN_LEFT	cursor.c	/^#define SCREEN_LEFT /;"	d	file:
+SCREEN_TOP	cursor.c	/^#define SCREEN_TOP /;"	d	file:
+SID_AD	player.s	/^SID_AD = $d405$/;"	d
+SID_AMP	player.s	/^SID_AMP = $d418$/;"	d
+SID_FLT_W	player.s	/^SID_FLT_W = $d415$/;"	d
+SID_FREQ_W	player.s	/^SID_FREQ_W = $d400$/;"	d
+SID_PWHI	player.s	/^SID_PWHI = $d402$/;"	d
+SID_PWLO	player.s	/^SID_PWLO = $d402$/;"	d
+SID_RC	player.s	/^SID_RC = $d417$/;"	d
+SID_SR	player.s	/^SID_SR = $d406$/;"	d
+SID_WF	player.s	/^SID_WF = $d404$/;"	d
+SONG_BOX	boxes.h	/^	SONG_BOX,$/;"	e	enum:__anon2
+SONG_BOX_HEIGHT	song.c	/^#define SONG_BOX_HEIGHT /;"	d	file:
+SONG_BOX_WIDTH	song.c	/^#define SONG_BOX_WIDTH /;"	d	file:
+SONG_CHAINS	mem.h	/^#define SONG_CHAINS /;"	d
+SONG_CHAIN_PTR	player_c.c	/^U8* SONG_CHAIN_PTR[3];$/;"	v
+SONG_END	mem.h	/^#define SONG_END /;"	d
+SONG_ROW_COUNT	mem.h	/^#define SONG_ROW_COUNT /;"	d
+SONG_START	mem.h	/^#define SONG_START /;"	d
+SONG_X	defines.h	/^#define SONG_X /;"	d
+SONG_Y	defines.h	/^#define SONG_Y /;"	d
+SPRITE_OFFSET	mem.h	/^#define SPRITE_OFFSET /;"	d
+SPRITE_X_FROM_COL	cursor.c	/^#define SPRITE_X_FROM_COL(/;"	d	file:
+STATIC_ASSERT	myassert.h	/^#define STATIC_ASSERT(/;"	d
+STATUS_MSG_ID	status.h	/^} STATUS_MSG_ID;$/;"	t	typeref:enum:__anon9
+TEXTCOLOR	defines.h	/^#define TEXTCOLOR(/;"	d
+TOPLEFT	border.c	/^#define TOPLEFT /;"	d	file:
+TOPRIGHT	border.c	/^#define TOPRIGHT /;"	d	file:
+TOP_Y	cursor.c	/^#define TOP_Y /;"	d	file:
+TRANSPOSE_COL	chain.c	/^#define TRANSPOSE_COL /;"	d	file:
+U16	types.h	/^typedef unsigned int U16;$/;"	t
+U8	types.h	/^typedef unsigned char U8;$/;"	t
+VBAR	border.c	/^#define VBAR /;"	d	file:
+VERSION	defines.h	/^#define VERSION /;"	d
+VIEW_CHAIN	chain.c	/^U8 VIEW_CHAIN;$/;"	v
+VIEW_PHRASE	phrase.c	/^U8 VIEW_PHRASE;$/;"	v
+WINDOW_MARGIN	song.c	/^#define WINDOW_MARGIN /;"	d	file:
+XPOS	instr.c	/^#define XPOS /;"	d	file:
+YPOS	instr.c	/^#define YPOS /;"	d	file:
+_ALLOC_H	alloc.h	/^#define _ALLOC_H$/;"	d
+_BORDER_H	border.h	/^#define _BORDER_H$/;"	d
+_BOXES_H	boxes.h	/^#define _BOXES_H$/;"	d
+_BOX_DATA_H	box_data.h	/^#define _BOX_DATA_H$/;"	d
+_CHAIN_H	chain.h	/^#define _CHAIN_H$/;"	d
+_CH_ACTIVE	player.s	/^_CH_ACTIVE:$/;"	l
+_CURSOR_H	cursor.h	/^#define _CURSOR_H$/;"	d
+_DEFINES_H	defines.h	/^#define _DEFINES_H$/;"	d
+_FILE_H	file.h	/^#define _FILE_H$/;"	d
+_GLOBAL_H	global.h	/^#define _GLOBAL_H$/;"	d
+_INSTR_H	instr.h	/^#define _INSTR_H$/;"	d
+_KBD_H	kbd.h	/^#define _KBD_H$/;"	d
+_MATH_H	math.h	/^#define _MATH_H$/;"	d
+_MEM_H	mem.h	/^#define _MEM_H$/;"	d
+_MYASSERT_H	myassert.h	/^#define _MYASSERT_H$/;"	d
+_PCC	player.s	/^_PCC:$/;"	l
+_PCC7	player.s	/^_PCC7:$/;"	l
+_PHRASE_ARG_PTR_LSB	player.s	/^_PHRASE_ARG_PTR_LSB:$/;"	l
+_PHRASE_ARG_PTR_MSB	player.s	/^_PHRASE_ARG_PTR_MSB:$/;"	l
+_PHRASE_CMD_PTR_LSB	player.s	/^_PHRASE_CMD_PTR_LSB:$/;"	l
+_PHRASE_CMD_PTR_MSB	player.s	/^_PHRASE_CMD_PTR_MSB:$/;"	l
+_PHRASE_H	phrase.h	/^#define _PHRASE_H$/;"	d
+_PHRASE_INSTR_PTR_LSB	player.s	/^_PHRASE_INSTR_PTR_LSB:$/;"	l
+_PHRASE_INSTR_PTR_MSB	player.s	/^_PHRASE_INSTR_PTR_MSB:$/;"	l
+_PHRASE_NOTE_PTR_LSB	player.s	/^_PHRASE_NOTE_PTR_LSB:$/;"	l
+_PHRASE_NOTE_PTR_MSB	player.s	/^_PHRASE_NOTE_PTR_MSB:$/;"	l
+_PLAYER_H	player.h	/^#define _PLAYER_H$/;"	d
+_PLAYMODE	player.s	/^_PLAYMODE:$/;"	l
+_PRINT_H	print.h	/^#define _PRINT_H$/;"	d
+_SONG_H	song.h	/^#define _SONG_H$/;"	d
+_STATUS_H	status.h	/^#define _STATUS_H$/;"	d
+_TYPES_H	types.h	/^#define _TYPES_H$/;"	d
+_g_playing	player.s	/^_g_playing:$/;"	l
+_g_sid_src	player.s	/^_g_sid_src:$/;"	l
+_g_ticks	player.s	/^_g_ticks:$/;"	l
+_groove	player.s	/^_groove:$/;"	l
+_player_init	player.s	/^_player_init:$/;"	l
+_player_stop	player.s	/^_player_stop:$/;"	l
+_startirq	irq.s	/^_startirq:$/;"	l
+_ticks_to_next_step	player.s	/^_ticks_to_next_step:$/;"	l
+active_delay	player.s	/^active_delay:$/;"	l
+ad	instr.h	/^	U8 ad;$/;"	m	struct:__anon8
+adjust_row_after_column_change	instr.c	/^static void adjust_row_after_column_change()$/;"	f	file:
+advance_step	player_c.c	/^void advance_step()$/;"	f
+advance_step_song	player_c.c	/^static void advance_step_song()$/;"	f	file:
+alloc_chain	alloc.c	/^void alloc_chain(U8 chain)$/;"	f
+alloc_instr	alloc.c	/^void alloc_instr(U8 instr)$/;"	f
+alloc_phrase	alloc.c	/^void alloc_phrase(U8 phrase)$/;"	f
+apply_cursor	cursor.c	/^static void apply_cursor()$/;"	f	file:
+apply_new_instr	player_c.c	/^void apply_new_instr(U8 instr_no)$/;"	f
+assert	myassert.h	/^#define assert(/;"	d
+automate	instr.h	/^	unsigned int automate : 1;$/;"	m	struct:__anon8
+beep	skweee64.c	/^void beep()$/;"	f
+blink_delay	cursor.c	/^static U8 blink_delay;$/;"	v	file:
+blink_status	cursor.c	/^static U8 blink_status;$/;"	v	file:
+box_data	boxes.c	/^static const BoxData* const box_data[] =$/;"	v	file:
+boxes_handle_key	boxes.c	/^void boxes_handle_key(U8 key)$/;"	f
+chain_col_width	chain.c	/^static const U8 chain_col_width[] = { 2, 2 };$/;"	v	file:
+chain_handle_key	chain.c	/^U8 chain_handle_key(U8 key)$/;"	f
+chain_paster	chain.c	/^void chain_paster(U8 val)$/;"	f
+chain_screen_col	chain.c	/^static const U8 chain_screen_col[] = $/;"	v	file:
+chain_tweak_handler	chain.c	/^void chain_tweak_handler(U8 modval)$/;"	f
+clamp_to_byte	math.c	/^U8 clamp_to_byte(U16 word)$/;"	f
+clamp_to_nibble	math.c	/^U8 clamp_to_nibble(U8 byte)$/;"	f
+clear_mark	cursor.c	/^void clear_mark()$/;"	f
+clear_status_line	status.c	/^static void clear_status_line()$/;"	f	file:
+clone_chain	chain.c	/^U8 clone_chain()$/;"	f
+clone_phrase	alloc.c	/^U8 clone_phrase(U8 src_phrase)$/;"	f
+column	instr.c	/^	int column : 2;$/;"	m	struct:__anon6	file:
+column_count	box_data.h	/^	const U8 column_count;$/;"	m	struct:__anon1
+column_key_handler	phrase.c	/^static U8 column_key_handler(U8 key)$/;"	f	file:
+column_w	box_data.h	/^	const U8* column_w;$/;"	m	struct:__anon1
+column_x	box_data.h	/^	const U8* column_x;$/;"	m	struct:__anon1
+commands	phrase.c	/^const char commands[] = "dfg";$/;"	v
+cur_cols	boxes.c	/^U8 cur_cols[BOX_COUNT];$/;"	v
+cur_down	instr.c	/^static void cur_down()$/;"	f	file:
+cur_down_handler	box_data.h	/^	const cur_down_handler_fn cur_down_handler;$/;"	m	struct:__anon1
+cur_down_handler_fn	box_data.h	/^typedef void (*cur_down_handler_fn)(void);$/;"	t
+cur_left	instr.c	/^static void cur_left()$/;"	f	file:
+cur_right	instr.c	/^static void cur_right()$/;"	f	file:
+cur_rows	boxes.c	/^U8 cur_rows[BOX_COUNT];$/;"	v
+cur_screen_row	phrase.c	/^static U8 cur_screen_row()$/;"	f	file:
+cur_up	instr.c	/^static void cur_up()$/;"	f	file:
+cur_up_handler	box_data.h	/^	const cur_up_handler_fn cur_up_handler;$/;"	m	struct:__anon1
+cur_up_handler_fn	box_data.h	/^typedef void (*cur_up_handler_fn)(void);$/;"	t
+curr_y	instr.c	/^static U8 curr_y()$/;"	f	file:
+cursor_1char	sprites.c	/^const char cursor_1char[64] = { $/;"	v
+cursor_down	chain.c	/^static void cursor_down()$/;"	f	file:
+cursor_down	phrase.c	/^static void cursor_down()$/;"	f	file:
+cursor_down	song.c	/^static void cursor_down()$/;"	f	file:
+cursor_tick	cursor.c	/^void cursor_tick()$/;"	f
+cursor_up	chain.c	/^static void cursor_up()$/;"	f	file:
+cursor_up	phrase.c	/^static void cursor_up()$/;"	f	file:
+cursor_up	song.c	/^static void cursor_up()$/;"	f	file:
+cursor_w	cursor.c	/^static U8 cursor_w = 1;$/;"	v	file:
+cursor_x	cursor.c	/^static U8 cursor_x;$/;"	v	file:
+cursor_y	cursor.c	/^static U8 cursor_y;$/;"	v	file:
+cursor_y_offset	boxes.c	/^U8 cursor_y_offset()$/;"	f
+cut_marked	boxes.c	/^void cut_marked()$/;"	f
+cut_step	song.c	/^static void cut_step()$/;"	f	file:
+d417	player_c.c	/^U8 d417;$/;"	v
+delete	chain.c	/^static void delete()$/;"	f	file:
+delete	phrase.c	/^static void delete()$/;"	f	file:
+desc	instr.c	/^	U8* desc;$/;"	m	struct:__anon6	file:
+draw_border	border.c	/^void draw_border(U8 x1, U8 y1, U8 x2, U8 y2, U8 active)$/;"	f
+draw_chain	chain.c	/^static void draw_chain()$/;"	f	file:
+draw_chain_border	chain.c	/^static void draw_chain_border()$/;"	f	file:
+draw_cursor	cursor.c	/^static void draw_cursor(U8 invert)$/;"	f	file:
+draw_field	instr.c	/^static void draw_field(U8 field_it)$/;"	f	file:
+draw_instr	instr.c	/^static void draw_instr()$/;"	f	file:
+draw_phrase	phrase.c	/^static void draw_phrase()$/;"	f	file:
+draw_phrase_border	phrase.c	/^static void draw_phrase_border()$/;"	f	file:
+draw_row_number	song.c	/^static void draw_row_number()$/;"	f	file:
+draw_song	song.c	/^static void draw_song()$/;"	f	file:
+draw_song_border	song.c	/^static void draw_song_border()$/;"	f	file:
+draw_song_rows	song.c	/^static void draw_song_rows()$/;"	f	file:
+dummy_get	instr.c	/^static U8 dummy_get() { return 0; }$/;"	f	file:
+enabled	instr.c	/^	int enabled : 1;$/;"	m	struct:__anon6	file:
+fetch_curr_chain_transpose	player_c.c	/^static void fetch_curr_chain_transpose()$/;"	f	file:
+fetch_pcc_phrase	player_c.c	/^static U8 fetch_pcc_phrase()$/;"	f	file:
+fields	instr.c	/^static const Field fields[FIELD_COUNT] =$/;"	v	file:
+filename	file.c	/^const char* filename = "song";$/;"	v
+first_unset_bit	alloc.c	/^static U8 first_unset_bit(U8* bits, U8 count)$/;"	f	file:
+flt_cutoff	instr.h	/^	U8 flt_cutoff; \/\/ filter cutoff$/;"	m	struct:__anon8
+flt_mode	instr.h	/^	U8 flt_mode; \/\/ filter mode + volume$/;"	m	struct:__anon8
+flt_q	instr.h	/^	U8 flt_q; \/\/ filter resonance ctl$/;"	m	struct:__anon8
+g_clip_type	global.c	/^U8 g_clip_type;$/;"	v
+g_clip_x1	global.c	/^U8 g_clip_x1;$/;"	v
+g_clip_x2	global.c	/^U8 g_clip_x2;$/;"	v
+g_clip_y1	global.c	/^U8 g_clip_y1;$/;"	v
+g_clip_y2	global.c	/^U8 g_clip_y2;$/;"	v
+g_clipboard	global.c	/^U8 g_clipboard[4][16];$/;"	v
+g_cur_box	boxes.c	/^U8 g_cur_box = SONG_BOX;$/;"	v
+g_cur_box_data	boxes.c	/^const BoxData* g_cur_box_data;$/;"	v
+g_filter_mod	player_c.c	/^U8 g_filter_mod[3];$/;"	v
+g_hexget_value	boxes.c	/^U8 g_hexget_value;$/;"	v
+g_marking	global.c	/^U8 g_marking;$/;"	v
+g_octave	global.c	/^U8 g_octave[3] = { 3, 3, 3 };$/;"	v
+g_song_y_offset	song.c	/^U8 g_song_y_offset;$/;"	v
+g_space_tap_count	global.c	/^U8 g_space_tap_count;$/;"	v
+gate_off_timer	player.s	/^gate_off_timer:$/;"	l
+geometry_fn	box_data.h	/^typedef void (*geometry_fn)();$/;"	t
+get	instr.c	/^	get_fn get;$/;"	m	struct:__anon6	file:
+get_ad	instr.c	/^static U8 get_ad() { return s_curr_instr->ad; }$/;"	f	file:
+get_arg	phrase.c	/^static U8 get_arg()$/;"	f	file:
+get_arg	player.s	/^get_arg:$/;"	l
+get_arg_on_row	phrase.c	/^static U8 get_arg_on_row(U8 y)$/;"	f	file:
+get_bp	instr.c	/^static U8 get_bp() {$/;"	f	file:
+get_cf	instr.c	/^static U8 get_cf() { return s_curr_instr->flt_cutoff; }$/;"	f	file:
+get_chain	song.c	/^static U8 get_chain(U8 x, U8 y)$/;"	f	file:
+get_chain_phrase	chain.c	/^static U8 get_chain_phrase(U8 chain, U8 row)$/;"	f	file:
+get_cmd	phrase.c	/^static U8 get_cmd()$/;"	f	file:
+get_cmd	player.s	/^get_cmd:$/;"	l
+get_cmd_on_row	phrase.c	/^static U8 get_cmd_on_row(U8 y)$/;"	f	file:
+get_cur_chain	song.c	/^static U8 get_cur_chain()$/;"	f	file:
+get_curr_field	instr.c	/^static const Field* get_curr_field() { return &fields[s_curr_field]; }$/;"	f	file:
+get_flt_mode	instr.c	/^static U8 get_flt_mode() { return s_curr_instr->flt_mode; }$/;"	f	file:
+get_fn	instr.c	/^typedef U8 (*get_fn)(void);$/;"	t	file:
+get_groove_ticks	player.s	/^get_groove_ticks:$/;"	l
+get_h	instr.c	/^static U8 get_h() { return s_curr_instr->h; }$/;"	f	file:
+get_hex_from_keyboard	boxes.c	/^U8 get_hex_from_keyboard(U8 key, U8 max_value)$/;"	f
+get_hp	instr.c	/^static U8 get_hp() {$/;"	f	file:
+get_index	alloc.c	/^static U8 get_index(U8* bits, U8 index)$/;"	f	file:
+get_instr	phrase.c	/^static U8 get_instr()$/;"	f	file:
+get_instr	player.s	/^get_instr:$/;"	l
+get_instr_on_row	phrase.c	/^static U8 get_instr_on_row(U8 y)$/;"	f	file:
+get_lp	instr.c	/^static U8 get_lp() {$/;"	f	file:
+get_new_groove	player.s	/^get_new_groove:$/;"	l
+get_next_phrase	chain.c	/^U8 get_next_phrase()$/;"	f
+get_noi	instr.c	/^static U8 get_noi() {$/;"	f	file:
+get_note	phrase.c	/^static U8 get_note()$/;"	f	file:
+get_note	player.s	/^get_note:$/;"	l
+get_note_from_row	phrase.c	/^static U8 get_note_from_row(U8 y)$/;"	f	file:
+get_phrase	chain.c	/^static U8 get_phrase()$/;"	f	file:
+get_phrase_on_row	chain.c	/^static U8 get_phrase_on_row(U8 row)$/;"	f	file:
+get_prev_phrase	chain.c	/^U8 get_prev_phrase()$/;"	f
+get_pw	instr.c	/^static U8 get_pw() { return s_curr_instr->pw; }$/;"	f	file:
+get_res	instr.c	/^static U8 get_res() { return s_curr_instr->flt_q \/ 16; }$/;"	f	file:
+get_ring	instr.c	/^static U8 get_ring() {$/;"	f	file:
+get_saw	instr.c	/^static U8 get_saw() {$/;"	f	file:
+get_sqr	instr.c	/^static U8 get_sqr() {$/;"	f	file:
+get_sr	instr.c	/^static U8 get_sr() { return s_curr_instr->sr; }$/;"	f	file:
+get_sync	instr.c	/^static U8 get_sync() {$/;"	f	file:
+get_transpose	chain.c	/^static U8 get_transpose()$/;"	f	file:
+get_tri	instr.c	/^static U8 get_tri() {$/;"	f	file:
+get_vol	instr.c	/^static U8 get_vol() { return get_flt_mode() & 0xf; }$/;"	f	file:
+get_wf	instr.c	/^static U8 get_wf() {$/;"	f	file:
+goto_row	instr.c	/^static U8 goto_row(U8 y)$/;"	f	file:
+groove_pos	player.s	/^groove_pos:$/;"	l
+h	instr.h	/^	U8 h;$/;"	m	struct:__anon8
+handle_arg_entry	phrase.c	/^static U8 handle_arg_entry(U8 key)$/;"	f	file:
+handle_chain_entry	song.c	/^static U8 handle_chain_entry(U8 key)$/;"	f	file:
+handle_cmd_key	phrase.c	/^static U8 handle_cmd_key(U8 key)$/;"	f	file:
+handle_dec_entry	chain.c	/^static U8 handle_dec_entry(U8 key)$/;"	f	file:
+handle_filter	player.s	/^handle_filter:$/;"	l
+handle_gate_offs	player.s	/^handle_gate_offs:$/;"	l
+handle_hard_restarts	player.s	/^handle_hard_restarts:$/;"	l
+handle_instr_entry	phrase.c	/^static U8 handle_instr_entry(U8 key)$/;"	f	file:
+handle_key	skweee64.c	/^void handle_key(U8 key)$/;"	f
+handle_note_key	phrase.c	/^static U8 handle_note_key(U8 key)$/;"	f	file:
+handle_num_entry	instr.c	/^static U8 handle_num_entry(U8 key)$/;"	f	file:
+handle_oob_down	phrase.c	/^static void handle_oob_down()$/;"	f	file:
+handle_oob_up	phrase.c	/^static void handle_oob_up()$/;"	f	file:
+handle_phrase_space	chain.c	/^static void handle_phrase_space()$/;"	f	file:
+handle_pre_fx	player.s	/^handle_pre_fx:$/;"	l
+handle_song_box_enter	song.c	/^void handle_song_box_enter()$/;"	f
+handle_space	chain.c	/^static void handle_space()$/;"	f	file:
+handle_space	instr.c	/^static void handle_space()$/;"	f	file:
+handle_space	song.c	/^static void handle_space()$/;"	f	file:
+handle_tweak	instr.c	/^static void handle_tweak(U8 diff)$/;"	f	file:
+handler_fn	box_data.h	/^typedef U8 (*handler_fn)(U8);$/;"	t
+handling_irq	irq.s	/^handling_irq:$/;"	l
+init	skweee64.c	/^void init()$/;"	f
+init_mem	mem.c	/^void init_mem()$/;"	f
+init_play_indicators	cursor.c	/^void init_play_indicators()$/;"	f
+instr_handle_key	instr.c	/^static U8 instr_handle_key(U8 key)$/;"	f	file:
+irq1	irq.s	/^irq1:$/;"	l
+k_chain_box_data	chain.c	/^const BoxData k_chain_box_data =$/;"	v
+k_cmd_max_arg	phrase.c	/^const U8 k_cmd_max_arg[] = {$/;"	v
+k_instr_box_data	instr.c	/^static const BoxData k_instr_box_data =$/;"	v	file:
+k_phrase_box_data	phrase.c	/^const BoxData k_phrase_box_data =$/;"	v
+k_song_box_data	song.c	/^const BoxData k_song_box_data =$/;"	v
+key_handler	box_data.h	/^	const handler_fn key_handler;$/;"	m	struct:__anon1
+key_handler	boxes.c	/^static handler_fn key_handler;$/;"	v	file:
+l	sprites.c	/^#define l /;"	d	file:
+last_chain	song.c	/^static U8 last_chain[3];$/;"	v	file:
+last_input_arg	phrase.c	/^static U8 last_input_arg[3];$/;"	v	file:
+last_input_cmd	phrase.c	/^static U8 last_input_cmd[3];$/;"	v	file:
+last_input_instr	phrase.c	/^static U8 last_input_instr[3];$/;"	v	file:
+last_input_note	phrase.c	/^static U8 last_input_note[3] = { C3, C3, C3 };$/;"	v	file:
+last_input_phrase	chain.c	/^static U8 last_input_phrase[3];$/;"	v	file:
+last_input_transpose	chain.c	/^static U8 last_input_transpose[3];$/;"	v	file:
+lift_chain_col	chain.c	/^void lift_chain_col()$/;"	f
+lift_col_fn	box_data.h	/^typedef void (*lift_col_fn)();$/;"	t
+lift_col_handler	box_data.h	/^	const lift_col_fn lift_col_handler;$/;"	m	struct:__anon1
+lift_phrase_col	phrase.c	/^void lift_phrase_col()$/;"	f
+lift_song_col	song.c	/^void lift_song_col()$/;"	f
+load_song	file.c	/^void load_song()$/;"	f
+lower_note_keys	phrase.c	/^const U8* lower_note_keys = "zsxdcvgbhnjm,l.";$/;"	v
+main	skweee64.c	/^int main()$/;"	f
+mark	boxes.c	/^static void mark()$/;"	f	file:
+mark_vertical_expand	boxes.c	/^static U8 mark_vertical_expand()$/;"	f	file:
+match	instr.c	/^static U8 match(U8 field_it, U8 y)$/;"	f	file:
+min_allowed_lift_col_2	box_data.h	/^	const U8 min_allowed_lift_col_2;$/;"	m	struct:__anon1
+move_cursor	cursor.c	/^void move_cursor(U8 col, U8 row, U8 w)$/;"	f
+move_cursor_down	boxes.c	/^static void move_cursor_down()$/;"	f	file:
+move_cursor_up	boxes.c	/^static void move_cursor_up()$/;"	f	file:
+move_cursor_vertically	instr.c	/^static void move_cursor_vertically(char step)$/;"	f	file:
+move_to_next_chain_step	player_c.c	/^static U8 move_to_next_chain_step()$/;"	f	file:
+msgs	status.c	/^static const char* const msgs[] =$/;"	v	file:
+multi_tweak	boxes.c	/^static void multi_tweak(U8 val)$/;"	f	file:
+mute	skweee64.c	/^void mute()$/;"	f
+new_or_clone	chain.c	/^static void new_or_clone(U8 do_new)$/;"	f	file:
+new_or_clone	song.c	/^static void new_or_clone(U8 do_new)$/;"	f	file:
+next_new_chain	alloc.c	/^U8 next_new_chain()$/;"	f
+next_new_instr	alloc.c	/^U8 next_new_instr()$/;"	f
+next_new_phrase	alloc.c	/^U8 next_new_phrase()$/;"	f
+note_keys	phrase.c	/^const U8* note_keys = "q2w3er5t6y7ui9o0";$/;"	v
+notes	print.c	/^static const char* notes = 	"ccddeffggaab";$/;"	v	file:
+overload	irq.s	/^overload:$/;"	l
+paint_box	print.c	/^void paint_box(U8 x1, U8 y1, U8 x2, U8 y2, U8 inverse)$/;"	f
+paint_mark	cursor.c	/^static void paint_mark(U8 invert)$/;"	f	file:
+paste	boxes.c	/^static void paste()$/;"	f	file:
+paste_advance_row	box_data.h	/^	const paste_advance_row_fn paste_advance_row;$/;"	m	struct:__anon1
+paste_advance_row_fn	box_data.h	/^typedef void (*paste_advance_row_fn)();$/;"	t
+paste_col_fn	box_data.h	/^typedef void (*paste_col_fn)(U8);$/;"	t
+paste_col_handler	box_data.h	/^	const paste_col_fn paste_col_handler;$/;"	m	struct:__anon1
+paste_phrase_col	phrase.c	/^void paste_phrase_col(U8 val)$/;"	f
+phrase_col_width	phrase.c	/^static const U8 phrase_col_width[] = { 2, 2, 1, 2 };$/;"	v	file:
+phrase_handle_key	phrase.c	/^U8 phrase_handle_key(U8 key)$/;"	f
+phrase_screen_col	phrase.c	/^static const U8 phrase_screen_col[] = $/;"	v	file:
+phrase_tweak_handler	phrase.c	/^void phrase_tweak_handler(U8 modval)$/;"	f
+play_chain	player_c.c	/^void play_chain(U8 chain, U8 row)$/;"	f
+play_indicator_tick	cursor.c	/^void play_indicator_tick()$/;"	f
+play_pcc_chain	player_c.c	/^static void play_pcc_chain()$/;"	f	file:
+play_phrase	player_c.c	/^void play_phrase(U8 phrase)$/;"	f
+play_song	player_c.c	/^void play_song(U8 song_row)$/;"	f
+play_step	player.s	/^play_step:$/;"	l
+poll_special_keys	kbd.c	/^void poll_special_keys()$/;"	f
+print_cmd	phrase.c	/^static void print_cmd(U8 cmd)$/;"	f	file:
+print_cmd_with_arg	phrase.c	/^static void print_cmd_with_arg(U8 row)$/;"	f	file:
+print_hex	print.c	/^void print_hex(U8 val)$/;"	f
+print_hex_ff	print.c	/^void print_hex_ff(U8 val)$/;"	f
+print_nibble	print.c	/^void print_nibble(U8 val)$/;"	f
+print_note	print.c	/^void print_note(U8 note)$/;"	f
+print_value	instr.c	/^static void print_value(const Field* field)$/;"	f	file:
+pull_up_below_chains	song.c	/^static void pull_up_below_chains()$/;"	f	file:
+pw	instr.h	/^	U8 pw;$/;"	m	struct:__anon8
+queued_adsr_timer	player.s	/^queued_adsr_timer:$/;"	l
+queued_freq_lsb	player.s	/^queued_freq_lsb:$/;"	l
+queued_freq_msb	player.s	/^queued_freq_msb:$/;"	l
+queued_freq_timer	player.s	/^queued_freq_timer:$/;"	l
+redraw	box_data.h	/^	const redraw_fn redraw;$/;"	m	struct:__anon1
+redraw_all_boxes	boxes.c	/^void redraw_all_boxes()$/;"	f
+redraw_fn	box_data.h	/^typedef void (*redraw_fn)();$/;"	t
+refresh_cursor	box_data.h	/^	const refresh_cursor_fn refresh_cursor;$/;"	m	struct:__anon1
+refresh_cursor	boxes.c	/^void refresh_cursor()$/;"	f
+refresh_cursor	instr.c	/^static void refresh_cursor()$/;"	f	file:
+refresh_cursor_fn	box_data.h	/^typedef void (*refresh_cursor_fn)();$/;"	t
+refresh_mark	cursor.c	/^void refresh_mark()$/;"	f
+release_space_handler	chain.c	/^static void release_space_handler()$/;"	f	file:
+release_space_handler	song.c	/^static void release_space_handler()$/;"	f	file:
+release_space_handler_p	global.c	/^void (*release_space_handler_p)();$/;"	v
+reset_blink	cursor.c	/^static void reset_blink()$/;"	f	file:
+reset_boxes	boxes.c	/^void reset_boxes()$/;"	f
+ret	irq.s	/^ret:$/;"	l
+rewind_song_step	player_c.c	/^static void rewind_song_step()$/;"	f	file:
+s_curr_column	instr.c	/^static U8 s_curr_column = 0;$/;"	v	file:
+s_curr_field	instr.c	/^static U8 s_curr_field = FieldAd;$/;"	v	file:
+s_curr_instr	instr.c	/^static Instr* s_curr_instr = (Instr*)INSTR_START;$/;"	v	file:
+s_curr_instr_no	instr.c	/^static U8 s_curr_instr_no;$/;"	v	file:
+s_hexget_active	boxes.c	/^static U8 s_hexget_active;$/;"	v	file:
+s_new_note	player.s	/^s_new_note:$/;"	l
+save_song	file.c	/^void save_song()$/;"	f
+screen_down	boxes.c	/^static void screen_down()$/;"	f	file:
+screen_up	boxes.c	/^static void screen_up()$/;"	f	file:
+set	instr.c	/^	set_fn set;$/;"	m	struct:__anon6	file:
+set	instr.c	/^static void set(U8 value)$/;"	f	file:
+set_ad	instr.c	/^static void set_ad(U8 val) { s_curr_instr->ad = val; }$/;"	f	file:
+set_arg	phrase.c	/^static void set_arg(U8 arg)$/;"	f	file:
+set_bp	instr.c	/^static void set_bp(U8 set) {$/;"	f	file:
+set_cf	instr.c	/^static void set_cf(U8 val) { s_curr_instr->flt_cutoff = val; }$/;"	f	file:
+set_chain	song.c	/^void set_chain(U8 val)$/;"	f
+set_chain_phrase	chain.c	/^static void set_chain_phrase(U8 chain, U8 row, U8 phrase)$/;"	f	file:
+set_cmd	phrase.c	/^static void set_cmd(U8 cmd)$/;"	f	file:
+set_flt_mode	instr.c	/^static void set_flt_mode(U8 val) { s_curr_instr->flt_mode = val; }$/;"	f	file:
+set_fn	instr.c	/^typedef void (*set_fn)(U8);$/;"	t	file:
+set_freq	player.s	/^set_freq:$/;"	l
+set_h	instr.c	/^static void set_h(U8 val) { s_curr_instr->h = val; }$/;"	f	file:
+set_hp	instr.c	/^static void set_hp(U8 set) {$/;"	f	file:
+set_index	alloc.c	/^static void set_index(U8* bits, U8 index)$/;"	f	file:
+set_instr	phrase.c	/^static void set_instr(U8 instr)$/;"	f	file:
+set_lp	instr.c	/^static void set_lp(U8 set) {$/;"	f	file:
+set_noi	instr.c	/^static void set_noi(U8 set) {$/;"	f	file:
+set_note	phrase.c	/^static void set_note(U8 note)$/;"	f	file:
+set_note_freq	player.s	/^set_note_freq:$/;"	l
+set_phrase	chain.c	/^static void set_phrase(U8 val)$/;"	f	file:
+set_pw	instr.c	/^static void set_pw(U8 val) { s_curr_instr->pw = val; }$/;"	f	file:
+set_res	instr.c	/^static void set_res(U8 val) { s_curr_instr->flt_q = val * 16; }$/;"	f	file:
+set_ring	instr.c	/^static void set_ring(U8 set) {$/;"	f	file:
+set_saw	instr.c	/^static void set_saw(U8 set) {$/;"	f	file:
+set_sqr	instr.c	/^static void set_sqr(U8 set) {$/;"	f	file:
+set_sr	instr.c	/^static void set_sr(U8 val) { s_curr_instr->sr = val; }$/;"	f	file:
+set_sync	instr.c	/^static void set_sync(U8 set) {$/;"	f	file:
+set_transpose	chain.c	/^static void set_transpose(U8 val)$/;"	f	file:
+set_tri	instr.c	/^static void set_tri(U8 set) {$/;"	f	file:
+set_vol	instr.c	/^static void set_vol(U8 val) {$/;"	f	file:
+set_wf	instr.c	/^static void set_wf(U8 val) {$/;"	f	file:
+sharps	print.c	/^static const char* sharps = " # #  # # # ";$/;"	v	file:
+show_chain	song.c	/^static void show_chain()$/;"	f	file:
+show_instr	phrase.c	/^static void show_instr()$/;"	f	file:
+show_phrase	chain.c	/^static void show_phrase()$/;"	f	file:
+show_status_msg	status.c	/^void show_status_msg(STATUS_MSG_ID id)$/;"	f
+so	global.c	/^void so(U8 val)$/;"	f
+song_col_width	song.c	/^static const U8 song_col_width[] = { 2, 2, 2 };$/;"	v	file:
+song_handle_key	song.c	/^U8 song_handle_key(U8 key)$/;"	f
+song_screen_col	song.c	/^static const U8 song_screen_col[] = { SONG_X + 1, SONG_X + 4, SONG_X + 7 };$/;"	v	file:
+song_tweak_handler	song.c	/^void song_tweak_handler(U8 modval)$/;"	f
+song_y_offset	song.c	/^U8 song_y_offset()$/;"	f
+song_y_to_screen	cursor.c	/^static U8 song_y_to_screen(U8 ch)$/;"	f	file:
+sort	global.c	/^void sort(U8* a, U8* b)$/;"	f
+special_keys	kbd.h	/^enum special_keys {$/;"	g
+sr	instr.h	/^	U8 sr;$/;"	m	struct:__anon8
+status_counter	status.c	/^static U8 status_counter;$/;"	v	file:
+status_tick	status.c	/^void status_tick()$/;"	f
+stop_marking	boxes.c	/^static void stop_marking()$/;"	f	file:
+switch_to_box	boxes.c	/^void switch_to_box(BOX_ID box)$/;"	f
+table	instr.h	/^	unsigned int table : 4;$/;"	m	struct:__anon8
+tick	player.s	/^tick:$/;"	l
+tick	skweee64.c	/^void tick()$/;"	f
+tick_channel	player.s	/^tick_channel:$/;"	l
+title_color	song.c	/^static U8 title_color()$/;"	f	file:
+touch	phrase.c	/^static void touch()$/;"	f	file:
+tweak_handler	box_data.h	/^	const tweak_handler_fn tweak_handler;$/;"	m	struct:__anon1
+tweak_handler_fn	box_data.h	/^typedef void (*tweak_handler_fn)(U8);$/;"	t
+type	instr.c	/^	int type : 2;$/;"	m	struct:__anon6	file:
+validate_window_start	song.c	/^static void validate_window_start()$/;"	f	file:
+vctl	instr.h	/^	U8 vctl; \/\/ d404$/;"	m	struct:__anon8
+view_chain	chain.c	/^void view_chain(U8 chain)$/;"	f
+view_instr	instr.c	/^void view_instr(U8 instr)$/;"	f
+view_phrase	phrase.c	/^void view_phrase(U8 phrase)$/;"	f
+wait_frame	skweee64.c	/^void wait_frame()$/;"	f
+x	instr.c	/^	int x : 4;$/;"	m	struct:__anon6	file:
+y	instr.c	/^	int y : 4;$/;"	m	struct:__anon6	file:
+y_pos_validator	box_data.h	/^	const y_pos_validator_fn y_pos_validator;$/;"	m	struct:__anon1
+y_pos_validator	song.c	/^static void y_pos_validator()$/;"	f	file:
+y_pos_validator_fn	box_data.h	/^typedef void (*y_pos_validator_fn)();$/;"	t
+zpsave	irq.s	/^zpsave:$/;"	l
+zpspace	irq.s	/^zpspace = 26 ; This is dangerous, in case it changes with new cc65 versions...$/;"	d
