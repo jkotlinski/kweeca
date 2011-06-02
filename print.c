@@ -43,26 +43,19 @@ void print_hex(U8 val)
 static const char* notes =  "ccddeffggaab";
 static const char* sharps = " # #  # # # ";
 
-void print_note(U8 note)
-{
-    U8 octave;
-
-    if (note == 0xff)
-    {
+void print_note(U8 note) {
+    if (note == 0xff) {
         cputs("-- ");
-        return;
     }
-    else if (note == 0xfe)
-    {
+    else if (note == 0xfe) {
         cputs("++ ");
-        return;
+    } else {
+        U8 octave = note / 12;
+        note = note - (octave * 12);
+        cputc(notes[note]);
+        print_nibble(octave);
+        cputc(sharps[note]);
     }
-
-    octave = note / 12;
-    note = note % 12;
-    cputc(notes[note]);
-    print_nibble(octave);
-    cputc(sharps[note]);
 }
 
 void print_hex_ff(U8 val)
