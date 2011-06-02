@@ -395,9 +395,6 @@ void phrase_tweak_handler(U8 modval)
                 set_note(note);
                 last_input_note[EDIT_CH] = note;
 
-                gotoxy(0, 0);
-                print_hex(note);
-
                 g_octave[EDIT_CH] = note / 12;
             }
             break;
