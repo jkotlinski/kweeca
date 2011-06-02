@@ -43,6 +43,7 @@ typedef struct
 
 extern const ScreenData k_instr_screen_data;
 
+extern U8 VIEW_INSTR;
 void view_instr(U8 instr);
 
 #endif // _INSTR_H

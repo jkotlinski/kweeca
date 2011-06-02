@@ -201,6 +201,7 @@ static void draw_phrase()
 void view_phrase(U8 phrase)
 {
     VIEW_PHRASE = phrase;
+    assert(VIEW_PHRASE < 0x80u);
     PHRASE_OFFSET = phrase * 16;
     draw_phrase();
 }
@@ -538,6 +539,10 @@ U8 phrase_handle_key(U8 key)
 
         case CH_CURS_RIGHT:
             if (KEY_LSHIFT) {
+                U8 instr = get_instr();
+                if (instr < INSTR_COUNT) {
+                    VIEW_INSTR = instr;
+                }
                 switch_screen(INSTR_SCREEN);
             } else {
                 return 0;

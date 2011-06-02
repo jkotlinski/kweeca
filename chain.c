@@ -149,6 +149,7 @@ static void draw_chain()
     U8 y;
     U8* phrase_ptr = CHAIN_PHRASES + CHAIN_OFFSET;
     U8* transpose_ptr = CHAIN_TRANSPOSES + CHAIN_OFFSET;
+    assert(VIEW_CHAIN < 0x80u);
     draw_chain_border();
     TEXTCOLOR(CHAIN_BOX);
     for (y = 0; y < 16; ++y)
@@ -341,7 +342,10 @@ U8 chain_handle_key(U8 key)
 
         case CH_CURS_RIGHT:
             if (KEY_LSHIFT) {
-                VIEW_PHRASE = get_phrase();
+                U8 phrase = get_phrase();
+                if (phrase < 0x80) {
+                    VIEW_PHRASE = phrase;
+                }
                 switch_screen(PHRASE_SCREEN);
             } else {
                 return 0;

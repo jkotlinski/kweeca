@@ -31,7 +31,7 @@ THE SOFTWARE. */
 #include "print.h"
 
 static Instr* s_curr_instr = (Instr*)INSTR_START;
-static U8 s_curr_instr_no;
+U8 VIEW_INSTR;
 
 typedef enum
 {
@@ -421,7 +421,7 @@ static void draw_instr()
     gotoxy(XPOS, 0);
     textcolor(COLOR_GREEN);
     cputs("instr ");
-    print_hex(s_curr_instr_no);
+    print_hex(VIEW_INSTR);
     gotoxy(XPOS + 6, YPOS + 1);
     cputs("filtr");
     while (field_it < FIELD_COUNT)
@@ -450,6 +450,6 @@ void view_instr(U8 instr)
     STATIC_ASSERT(!(sizeof(Instr) & 0xf0u)); // sizeof(Instr) < 0x10
     assert(instr < INSTR_COUNT);
     s_curr_instr = (Instr*)(INSTR_START + 0x10 * instr);
-    s_curr_instr_no = instr;
+    VIEW_INSTR = instr;
     draw_instr();
 }
