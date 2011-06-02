@@ -23,7 +23,7 @@ THE SOFTWARE. */
 #include <c64.h>
 #include <string.h>
 
-#include "boxes.h"
+#include "screens.h"
 #include "defines.h"
 #include "global.h"
 #include "mem.h"

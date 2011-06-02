@@ -22,7 +22,7 @@ THE SOFTWARE. */
 
 #include <conio.h>
 
-#include "boxes.h"
+#include "screens.h"
 #include "cursor.h"
 #include "myassert.h"
 #include "phrase.h"

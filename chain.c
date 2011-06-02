@@ -25,7 +25,7 @@ THE SOFTWARE. */
 #include <string.h>
 
 #include "alloc.h"
-#include "boxes.h"
+#include "screens.h"
 #include "cursor.h"
 #include "defines.h"
 #include "global.h"

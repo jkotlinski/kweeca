@@ -23,7 +23,7 @@ THE SOFTWARE. */
 #include <conio.h>
 
 #include "alloc.h"
-#include "boxes.h"
+#include "screens.h"
 #include "chain.h"
 #include "cursor.h"
 #include "defines.h"
