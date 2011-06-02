@@ -150,7 +150,7 @@ static void draw_chain()
     U8* phrase_ptr = CHAIN_PHRASES + CHAIN_OFFSET;
     U8* transpose_ptr = CHAIN_TRANSPOSES + CHAIN_OFFSET;
     draw_chain_border();
-    textcolor(g_cur_box == CHAIN_BOX ? COLOR_WHITE : COLOR_INACTIVE);
+    TEXTCOLOR(CHAIN_BOX);
     for (y = 0; y < 16; ++y)
     {
         gotoxy(CHAIN_X + 1, CHAIN_Y + 1 + y);

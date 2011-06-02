@@ -43,7 +43,10 @@ THE SOFTWARE. */
 
 #define COLOR_TITLE COLOR_GREEN
 #define COLOR_INACTIVE COLOR_GRAY1
-#define TEXTCOLOR(box) textcolor((g_cur_box == box) ? COLOR_WHITE : COLOR_INACTIVE)
+
+// In the future, maybe use different colors for different screens?
+// If so, compare box with g_cur_box.
+#define TEXTCOLOR(box) textcolor(COLOR_WHITE)
 
 #define VERSION "0.0.0"
 
