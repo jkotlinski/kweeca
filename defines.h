@@ -22,13 +22,13 @@ THE SOFTWARE. */
 #define _DEFINES_H
 
 // View locations - start.
-#define PHRASE_X 14 
+#define PHRASE_X 10
 #define PHRASE_Y 0
 
-#define CHAIN_X 8
+#define CHAIN_X 9
 #define CHAIN_Y 0
 
-#define SONG_X -1
+#define SONG_X 8
 #define SONG_Y 0
 // View locations - end.
 

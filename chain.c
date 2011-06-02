@@ -54,8 +54,8 @@ static void draw_chain();
 
 static const U8 chain_screen_col[] = 
 { 
-    CHAIN_X + 1 + 0, 
-    CHAIN_X + 1 + 3
+    CHAIN_X + 0, 
+    CHAIN_X + 3
 };
 static const U8 chain_col_width[] = { 2, 2 };
 const ScreenData k_chain_screen_data =
@@ -84,7 +84,7 @@ static U8 last_input_transpose[3];
 
 static void draw_chain_border()
 {
-    gotoxy(CHAIN_X + 1, CHAIN_Y);
+    gotoxy(CHAIN_X, CHAIN_Y);
     textcolor(COLOR_GREEN);
     cputs("ch.");
     print_hex(VIEW_CHAIN);
@@ -153,7 +153,7 @@ static void draw_chain()
     TEXTCOLOR(CHAIN_BOX);
     for (y = 0; y < 16; ++y)
     {
-        gotoxy(CHAIN_X + 1, CHAIN_Y + 1 + y);
+        gotoxy(CHAIN_X, CHAIN_Y + 1 + y);
         print_hex_ff(phrase_ptr[y]);
         cputc(' ');
         print_hex(transpose_ptr[y]);

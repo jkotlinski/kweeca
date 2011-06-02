@@ -46,7 +46,7 @@ static void cursor_up();
 static void y_pos_validator();
 static void draw_song();
 
-static const U8 song_screen_col[] = { SONG_X + 1, SONG_X + 4, SONG_X + 7 };
+static const U8 song_screen_col[] = { SONG_X, SONG_X + 3, SONG_X + 6 };
 static const U8 song_col_width[] = { 2, 2, 2 };
 const ScreenData k_song_screen_data =
 {
@@ -89,14 +89,14 @@ static U8 last_chain[3];
 
 static void draw_row_number()
 {
-    gotoxy(SONG_X + 6, SONG_Y);
+    gotoxy(SONG_X + 5, SONG_Y);
     textcolor(COLOR_TITLE);
     print_hex(CUR_ROW_SONG);
 }
 
 static void draw_song_border()
 {
-    gotoxy(SONG_X + 1, SONG_Y);
+    gotoxy(SONG_X, SONG_Y);
     textcolor(COLOR_TITLE);
     cputs("song");
     draw_row_number();
@@ -114,7 +114,7 @@ void set_chain(U8 val)
     if (y & 0xf0u)
         return;
     TEXTCOLOR(SONG_BOX);
-    gotoxy(SONG_X + 1 + CUR_COL_SONG * 3, SONG_Y + 1 + y);
+    gotoxy(SONG_X + CUR_COL_SONG * 3, SONG_Y + 1 + y);
     print_hex_ff(val);
 }
 
@@ -125,7 +125,7 @@ static void draw_song_rows()
     for (; y < 16; ++y)
     {
         const U8 src_y = y + g_song_y_offset;
-        gotoxy(SONG_X + 1, SONG_Y + 1 + y);
+        gotoxy(SONG_X, SONG_Y + 1 + y);
         print_hex_ff(get_chain(0, src_y));
         cputc(' ');
         print_hex_ff(get_chain(1, src_y));

@@ -75,10 +75,10 @@ static void draw_phrase();
 
 static const U8 phrase_screen_col[] = 
 { 
-    PHRASE_X + 1 + 0, 
-    PHRASE_X + 1 + 3, 
-    PHRASE_X + 1 + 6, 
-    PHRASE_X + 1 + 7 
+    PHRASE_X + 0, 
+    PHRASE_X + 3, 
+    PHRASE_X + 6, 
+    PHRASE_X + 7 
 };
 static const U8 phrase_col_width[] = { 2, 2, 1, 2 };
 const ScreenData k_phrase_screen_data =
@@ -158,7 +158,7 @@ static U8 cur_screen_row()
 
 static void draw_phrase_border()
 {
-    gotoxy(PHRASE_X + 1, PHRASE_Y);
+    gotoxy(PHRASE_X, PHRASE_Y);
     textcolor(COLOR_GREEN);
     cputs("phrase ");
     print_hex(VIEW_PHRASE);
@@ -190,7 +190,7 @@ static void draw_phrase()
     for (y = 0; y < 16; ++y)
     {
         U8 instr = get_instr_on_row(y);
-        gotoxy(PHRASE_X + 1, PHRASE_Y + 1 + y);
+        gotoxy(PHRASE_X, PHRASE_Y + 1 + y);
         print_note(get_note_from_row(y));
         print_hex_ff(instr);
         putchar(' ');

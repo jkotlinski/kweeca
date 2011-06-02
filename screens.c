@@ -51,21 +51,14 @@ static const ScreenData* const screen_data[] =
     &k_instr_screen_data
 };
 
-void redraw_all_screenes()
-{
-    U8 it;
-    for (it = 0; it < SCREEN_COUNT; ++it)
-        if (g_cur_screen != it)
-            screen_data[it]->redraw();
-    screen_data[g_cur_screen]->redraw(); // Draw active screen last.
-}
-
 void refresh_cursor()
 {
     if (g_cur_screen_data->refresh_cursor)
         g_cur_screen_data->refresh_cursor();
     else
-        move_cursor(g_cur_screen_data->column_x[CUR_COL], 1 + CUR_ROW - cursor_y_offset(), g_cur_screen_data->column_w[CUR_COL]);
+        move_cursor(g_cur_screen_data->column_x[CUR_COL],
+                1 + CUR_ROW - cursor_y_offset(),
+                g_cur_screen_data->column_w[CUR_COL]);
 }
 
 static void stop_marking()
@@ -89,7 +82,8 @@ void switch_screen(SCREEN_ID screen)
     stop_marking();
     g_cur_screen = screen;
     key_handler = g_cur_screen_data->key_handler;
-    redraw_all_screenes();
+    clrscr();
+    screen_data[g_cur_screen]->redraw();
     refresh_cursor();
 }
 
