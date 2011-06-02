@@ -61,7 +61,7 @@ typedef struct
     int enabled : 1;
 } Field;
 
-#define COL2X 6
+#define COL2X 8
 
 // Byte getters + setters.
 
@@ -422,8 +422,9 @@ static void draw_instr()
     textcolor(COLOR_GREEN);
     cputs("instr ");
     print_hex(VIEW_INSTR);
-    gotoxy(XPOS + 6, YPOS + 1);
-    cputs("filtr");
+    gotoxy(XPOS + 8, YPOS + 1);
+    textcolor(COLOR_BLUE);
+    cputs("filter");
     while (field_it < FIELD_COUNT)
     {
         draw_field(field_it++);
