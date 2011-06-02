@@ -5,36 +5,9 @@ NOTE: If running VICE on Mac OS X, make sure you use the
 native Cocoa version and positional keyboard (osx_pos.vkm).
 
 
-KEY PRESSES
-
- +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+  +-----+
- |<--| 1 | c#| d#| 4 | f#| g#| a#| 8 | 9 |d#3| o+| o-| € |C/H|I/D|  |     |
- +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+  +-----+
- | CTL | c1| d1| e1| f1| g1| a1| h1| c2| d2|<S | ^ | S>| ! | RST |  |     |
-+---+--++--++--++--++--++--++--++--++--++--++--++--++--++--+----++  +-----+
-|R/S|LCK| A | c#| d#| F | f#| g#| a#| K | c#| < | _ | > | START |   |load |
-+---+---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+---+   +-----+
-|C= |SHIFT| c0| d0| e0| f0| g0| a0| h0| c1| d1| / |SHIFT|   |   |   |save |
-+---+-----+-+-+---+---+---+---+---+---+---+---+---+-----+---+---+   +-----+
-            |          again/tweak            |
-            +---------------------------------+
-
 US/UK KEYBOARD:
 
-enter = start/stop
-shift + enter = start/stop song
-p *  = screen left/right
- @  = cursor up
-:;= = cursor left/down/right
 shift + @/; = screen up/down
-
-+/- = octave change (phrase screen only)
-
-space = lift/drop
-space + cursor = tweak what's under cursor
-in song + chain:
-	space, space = on empty step, new. otherwise, clone.
-
 
 CUT/PASTE
 
@@ -74,19 +47,6 @@ $73a0-$73a3: instr alloc table
 
 
 ---
-
-+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
-|<--| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | + | - | € |C/H|I/D|
-+---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
-+ CTL | Q | W | E | R | T | Y | U | I | O | P | @ | * | ^ | RST |
-+---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-----+
-|R/S|LCK| A | S | D | F | G | H | J | K | L | : | ; | = | RETURN|
-+---+---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+---+
-|C= |SHIFT| Z | X | C | V | B | N | M | , | . | / |SHIFT|CUD|CLR|
-+---+-----+-+-+---+---+---+---+---+---+---+---+---+-----+---+---+
-            |                                 |
-            +---------------------------------+
-
 
 /// COMMANDS
 
