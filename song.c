@@ -145,14 +145,6 @@ static U8 get_cur_chain()
     return get_chain(CUR_COL_SONG, CUR_ROW_SONG);
 }
 
-static void show_chain()
-{
-    U8 chain = get_cur_chain();
-    if (0xffu == chain)
-        return;
-    view_chain(chain);
-}
-
 static void release_space_handler()
 {
     alloc_chain(get_cur_chain());
@@ -177,7 +169,6 @@ static void new_or_clone(U8 do_new)
     last_chain[EDIT_CH] = chain;
     alloc_chain(chain);
     set_chain(chain);
-    show_chain();
 }
 
 static void handle_space()
@@ -193,13 +184,9 @@ static void handle_space()
         case 1:
             s_first_tap_was_on_empty_step = (0xffu == chain);
 
-            if (s_first_tap_was_on_empty_step)
-            {
+            if (s_first_tap_was_on_empty_step) {
                 set_chain(last_chain[EDIT_CH]);
-                show_chain();
-            }
-            else 
-            {
+            } else {
                 last_chain[EDIT_CH] = chain;
             }
             break;
@@ -221,7 +208,6 @@ static void pull_up_below_chains()
         ++CUR_ROW_SONG;
     }
     CUR_ROW_SONG = prev_row;
-    show_chain();
 }
 
 static void cut_step()
@@ -255,7 +241,6 @@ static U8 handle_chain_entry(U8 key)
 
         case HEXGET_ACTIVE:
             set_chain(g_hexget_value);
-            show_chain();
     }
     return status == HEXGET_ACTIVE;
 }
@@ -279,12 +264,7 @@ U8 song_handle_key(U8 key)
     if (handle_chain_entry(key))
         return 1;
 
-    switch (key)
-    {
-        case CH_REFRESH:
-            show_chain();
-            break;
-
+    switch (key) {
             /*
         case CH_ENTER:
             song_startstop();
@@ -339,7 +319,6 @@ void song_tweak_handler(U8 modval)
     else if (chain >= CHAIN_COUNT)
         chain = CHAIN_COUNT - 1;
     set_chain(chain);
-    if (!g_marking) show_chain();
     last_chain[EDIT_CH] = chain;
 }
 

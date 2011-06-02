@@ -337,7 +337,6 @@ void screens_handle_key(U8 key)
             }
             break;
     }
-    key_handler(CH_REFRESH);
 }
 
 U8 g_hexget_value;

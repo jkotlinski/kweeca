@@ -35,7 +35,6 @@ enum special_keys {
     CH_TWEAK_DOWN = 4,
     CH_TWEAK_RIGHT,
     CH_TWEAK_LEFT,
-    CH_REFRESH, // Dummy key to refresh view.
     CH_SHIFT = 0x80u
 };
 

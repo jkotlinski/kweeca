@@ -26,8 +26,6 @@ THE SOFTWARE. */
 
 extern U8 VIEW_CHAIN;
 
-void view_chain(U8 chain);
-
 U8 get_prev_phrase();
 U8 get_next_phrase();
 

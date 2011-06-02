@@ -160,22 +160,6 @@ static void draw_chain()
     }
 }
 
-static void show_phrase()
-{
-    U8 phrase = get_phrase();
-    if (0xffu == phrase)
-        return;
-    view_phrase(phrase);
-}
-
-void view_chain(U8 chain)
-{
-    VIEW_CHAIN = chain;
-    CHAIN_OFFSET = chain * 16;
-    draw_chain();
-    show_phrase();
-}
-
 static void release_space_handler()
 {
     alloc_phrase(get_phrase());
@@ -200,7 +184,6 @@ static void new_or_clone(U8 do_new)
     last_input_phrase[EDIT_CH] = phrase;
     alloc_phrase(phrase);
     set_phrase(phrase);
-    show_phrase();
 }
 
 static void handle_phrase_space()
@@ -219,7 +202,6 @@ static void handle_phrase_space()
             if (s_first_tap_was_on_empty_step)
             {
                 set_phrase(last_input_phrase[EDIT_CH]);
-                show_phrase();
             }
             else 
             {
@@ -268,7 +250,6 @@ static U8 handle_dec_entry(U8 key)
                     
                 case HEXGET_ACTIVE:
                     set_phrase(g_hexget_value);
-                    show_phrase();
             }
             break;
 
@@ -315,12 +296,7 @@ U8 chain_handle_key(U8 key)
 {
     if (handle_dec_entry(key))
         return 1;
-    switch (key)
-    {
-        case CH_REFRESH:
-            show_phrase();
-            break;
-
+    switch (key) {
             /*
         case CH_ENTER | CH_SHIFT:
             song_startstop();

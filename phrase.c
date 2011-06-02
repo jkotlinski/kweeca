@@ -198,20 +198,11 @@ static void draw_phrase()
     }
 }
 
-static void show_instr()
-{
-    U8 instr = get_instr();
-    if (0xffu == instr)
-        return;
-    view_instr(instr);
-}
-
 void view_phrase(U8 phrase)
 {
     VIEW_PHRASE = phrase;
     PHRASE_OFFSET = phrase * 16;
     draw_phrase();
-    show_instr();
 }
 
 // Set note at CUR_ROW_PHRASE.
@@ -351,7 +342,6 @@ static void touch()
                 if (0xffu == instr)
                 {
                     set_instr(last_input_instr[EDIT_CH]);
-                    show_instr();
                 }
                 else
                 {
@@ -460,7 +450,6 @@ static U8 handle_instr_entry(U8 key)
     {
         last_input_instr[EDIT_CH] = g_hexget_value;
         set_instr(g_hexget_value);
-        show_instr();
     }
     return status == HEXGET_ACTIVE;
 }
@@ -505,12 +494,7 @@ U8 phrase_handle_key(U8 key)
     if (column_key_handler(key))
         return 1;
 
-    switch (key)
-    {
-        case CH_REFRESH:
-            show_instr();
-            break;
-
+    switch (key) {
             /*
         case CH_ENTER | CH_SHIFT:
             handle_song_screen_enter();
