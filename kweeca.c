@@ -35,26 +35,7 @@ THE SOFTWARE. */
 
 #include "instr.h"
 
-void wait_frame()
-{
-    while (VIC.rasterline != 0x40);
-    while (VIC.rasterline == 0x40);
-}
-
-void beep()
-{
-    SID.v1.ctrl = 0x41;
-    SID.v2.ctrl = 0x41;
-}
-
-void mute()
-{
-    SID.v1.ctrl = 0x40;
-    SID.v2.ctrl = 0x40;
-}
-
-void init()
-{
+void init() {
     clrscr();
     player_init();
     init_mem();
@@ -71,10 +52,8 @@ void init()
 
 #include "print.h"
 
-void handle_key(U8 key)
-{
-    switch (key)
-    {
+void handle_key(U8 key) {
+    switch (key) {
         case CH_F5:
             load_song();
             reset_screens();
@@ -89,15 +68,13 @@ void handle_key(U8 key)
     reset_blink();
 }
 
-void tick()
-{
+void tick() {
     U8 prev_key_space = KEY_SPACE;
     poll_shift();
-    if (kbhit())
-    {
+    if (kbhit()) {
         U8 ch = cgetc();
         const U8 is_repeated_space = (ch == ' ' && KEY_SPACE);
-        if (!KEY_RSHIFT) {
+        if (KEY_LSHIFT && !KEY_RSHIFT) {
             ch &= ~CH_SHIFT;  // Only right shift counts as shift.
         }
         if (!is_repeated_space) {
@@ -112,15 +89,13 @@ void tick()
     status_tick();
 }
 
-int main()
-{
+int main() {
     init();
 
-    for (;;)
-    {
-        while (!g_ticks); // Wait for tick.
+    for (;;) {
+        while (!g_ticks);  // Wait for tick.
         tick();
-        g_ticks--; // Only decreased here.
+        g_ticks--;  // Only decreased here.
     }
     return 0;
 }
