@@ -92,16 +92,19 @@ void handle_key(U8 key)
 void tick()
 {
     U8 prev_key_space = KEY_SPACE;
+    poll_shift();
     if (kbhit())
     {
-        const U8 ch = cgetc();
+        U8 ch = cgetc();
         const U8 is_repeated_space = (ch == ' ' && KEY_SPACE);
-        if (!is_repeated_space)
-        {
+        if (!KEY_RSHIFT) {
+            ch &= ~CH_SHIFT;  // Only right shift counts as shift.
+        }
+        if (!is_repeated_space) {
             handle_key(ch);
         }
     }
-    poll_special_keys();
+    poll_space();
     if (prev_key_space && !KEY_SPACE && release_space_handler_p)
         release_space_handler_p();
     cursor_tick();

@@ -269,9 +269,13 @@ U8 song_handle_key(U8 key)
             song_startstop();
             break;
 
-        case CH_SCREEN_RIGHT:
-            switch_screen(CHAIN_SCREEN);
-            break;
+        case CH_CURS_RIGHT:
+            if (KEY_LSHIFT) {
+                switch_screen(CHAIN_SCREEN);
+                break;
+            } else {
+                return 0;
+            }
 
         case ' ':
             handle_space();

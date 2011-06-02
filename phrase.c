@@ -528,12 +528,20 @@ U8 phrase_handle_key(U8 key)
                 player_stop();
             break;
 
-        case CH_SCREEN_LEFT:
-            switch_screen(CHAIN_SCREEN);
+        case CH_CURS_LEFT:
+            if (KEY_LSHIFT) {
+                switch_screen(CHAIN_SCREEN);
+            } else {
+                return 0;
+            }
             break;
 
-        case CH_SCREEN_RIGHT:
-            switch_screen(INSTR_SCREEN);
+        case CH_CURS_RIGHT:
+            if (KEY_LSHIFT) {
+                switch_screen(INSTR_SCREEN);
+            } else {
+                return 0;
+            }
             break;
 
         case ' ':

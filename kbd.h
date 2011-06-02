@@ -25,7 +25,6 @@ THE SOFTWARE. */
 
 extern U8 KEY_LSHIFT;
 extern U8 KEY_RSHIFT;
-extern U8 KEY_SHIFT;
 extern U8 KEY_SPACE;
 
 enum special_keys {
@@ -38,12 +37,7 @@ enum special_keys {
     CH_SHIFT = 0x80u
 };
 
-#define CH_SCREEN_LEFT ';'
-#define CH_SCREEN_RIGHT '='
-
-// #define CH_MYDOWN_SHIFTED ']'
-// #define CH_MYUP_SHIFTED 0xbau
-
-void poll_special_keys();
+void poll_shift();
+void poll_space();
 
 #endif // _KBD_H

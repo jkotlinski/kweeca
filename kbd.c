@@ -24,7 +24,8 @@ THE SOFTWARE. */
 
 #include "global.h"
 
-U8 KEY_SHIFT;
+U8 KEY_LSHIFT;
+U8 KEY_RSHIFT;
 U8 KEY_SPACE;
 
 void handle_key(U8 key); // defined in kweeca.c
@@ -32,32 +33,30 @@ void handle_key(U8 key); // defined in kweeca.c
 #define ROW(i) CIA1.pra = 0xffu - (1 << i)
 #define COL(i) !(CIA1.prb & (1 << i))
 
-void poll_special_keys()
-{
-    U8 right_shift;
-    static U8 s_last_tick_was_tweak;
-
+void poll_shift() {
     ROW(6);
-    right_shift = COL(4);
+    KEY_RSHIFT = COL(4);
 
     ROW(1);
-    KEY_SHIFT = right_shift || COL(7); // left shift
-    
+    KEY_LSHIFT = COL(7);
+}
+
+void poll_space()
+{
+    static U8 s_last_tick_was_tweak;
+
     ROW(7);
     KEY_SPACE = COL(4);
 
-    if (KEY_SPACE)
-    {
+    if (KEY_SPACE) {
         U8 tweak_key = 0;
-        ROW(5);
-        if (COL(5)) tweak_key = CH_TWEAK_LEFT; // :
-        else if (COL(6)) tweak_key = CH_TWEAK_UP; // @
-        else {
-            ROW(6);
-            if (COL(2)) tweak_key = CH_TWEAK_DOWN; // ;
-            else if (COL(5)) tweak_key = CH_TWEAK_RIGHT; // =
+        ROW(0);
+        if (COL(2)) {  // Left/right key.
+            tweak_key = KEY_RSHIFT ? CH_TWEAK_LEFT : CH_TWEAK_RIGHT;
+        } else if (COL(7)) {
+            tweak_key = KEY_RSHIFT ? CH_TWEAK_UP : CH_TWEAK_DOWN;
         }
-      
+
         if (tweak_key)
         {
             if (!s_last_tick_was_tweak) // No key repeat for now, change this later?

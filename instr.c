@@ -276,12 +276,12 @@ static U8 instr_handle_key(U8 key)
 
     switch (key)
     {
-        case CH_SCREEN_LEFT:
-            switch_screen(PHRASE_SCREEN);
-            return 1;
-
         case CH_CURS_LEFT:
-            cur_left();
+            if (KEY_LSHIFT) {
+                switch_screen(PHRASE_SCREEN);
+            } else {
+                cur_left();
+            }
             return 1;
 
         case CH_CURS_RIGHT:

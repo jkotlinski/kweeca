@@ -339,11 +339,19 @@ U8 chain_handle_key(U8 key)
             mark();
             break;
 
-        case CH_SCREEN_RIGHT:
-            switch_screen(PHRASE_SCREEN);
+        case CH_CURS_RIGHT:
+            if (KEY_LSHIFT) {
+                switch_screen(PHRASE_SCREEN);
+            } else {
+                return 0;
+            }
             break;
-        case CH_SCREEN_LEFT:
-            switch_screen(SONG_SCREEN);
+        case CH_CURS_LEFT:
+            if (KEY_LSHIFT) {
+                switch_screen(SONG_SCREEN);
+            } else {
+                return 0;
+            }
             break;
 
         default:
