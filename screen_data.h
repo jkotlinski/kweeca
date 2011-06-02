@@ -23,7 +23,6 @@ THE SOFTWARE. */
 
 #include "types.h"
 
-typedef void (*geometry_fn)();
 typedef U8 (*handler_fn)(U8);
 typedef void (*cur_down_handler_fn)(void);
 typedef void (*cur_up_handler_fn)(void);
