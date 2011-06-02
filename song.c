@@ -260,7 +260,7 @@ static U8 handle_chain_entry(U8 key)
     return status == HEXGET_ACTIVE;
 }
 
-void handle_song_screen_enter()
+void song_startstop()
 {
     if (PLAYMODE != PLAYMODE_SONG)
         player_stop();
@@ -285,9 +285,11 @@ U8 song_handle_key(U8 key)
             show_chain();
             break;
 
+            /*
         case CH_ENTER:
-            handle_song_screen_enter();
+            song_startstop();
             break;
+            */
 
         case CH_SCREEN_RIGHT:
             switch_screen(CHAIN_SCREEN);

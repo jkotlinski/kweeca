@@ -321,8 +321,9 @@ U8 chain_handle_key(U8 key)
             show_phrase();
             break;
 
+            /*
         case CH_ENTER | CH_SHIFT:
-            handle_song_screen_enter();
+            song_startstop();
             break;
 
         case CH_ENTER:
@@ -338,6 +339,7 @@ U8 chain_handle_key(U8 key)
             else
                 player_stop();
             break;
+            */
 
         case ' ':
             handle_space();

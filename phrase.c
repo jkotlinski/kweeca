@@ -511,6 +511,7 @@ U8 phrase_handle_key(U8 key)
             show_instr();
             break;
 
+            /*
         case CH_ENTER | CH_SHIFT:
             handle_song_screen_enter();
             break;
@@ -529,6 +530,7 @@ U8 phrase_handle_key(U8 key)
             else
                 player_stop();
             break;
+            */
 
         case CH_SCREEN_LEFT:
             switch_screen(CHAIN_SCREEN);

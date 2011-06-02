@@ -39,8 +39,8 @@ enum special_keys {
     CH_SHIFT = 0x80u
 };
 
-#define CH_SCREEN_LEFT 'p'
-#define CH_SCREEN_RIGHT '*'
+#define CH_SCREEN_LEFT (CH_SHIFT | CH_ENTER)
+#define CH_SCREEN_RIGHT CH_ENTER
 
 // #define CH_MYDOWN_SHIFTED ']'
 // #define CH_MYUP_SHIFTED 0xbau
