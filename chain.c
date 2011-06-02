@@ -26,7 +26,6 @@ THE SOFTWARE. */
 
 #include "alloc.h"
 #include "boxes.h"
-#include "border.h"
 #include "cursor.h"
 #include "defines.h"
 #include "global.h"
@@ -85,11 +84,8 @@ static U8 last_input_transpose[3];
 
 static void draw_chain_border()
 {
-    U8 active = IS_BOX_ACTIVE(CHAIN_BOX);
-    draw_border(CHAIN_X, CHAIN_Y, CHAIN_X + CHAIN_BOX_WIDTH, CHAIN_Y + CHAIN_BOX_HEIGHT, active);
-
     gotoxy(CHAIN_X + 1, CHAIN_Y);
-    if (active) textcolor(COLOR_GREEN);
+    textcolor(COLOR_GREEN);
     cputs("ch.");
     print_hex(VIEW_CHAIN);
 }

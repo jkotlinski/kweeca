@@ -23,7 +23,6 @@ THE SOFTWARE. */
 #include <conio.h>
 
 #include "myassert.h"
-#include "border.h"
 #include "boxes.h"
 #include "cursor.h"
 #include "kbd.h"
@@ -421,9 +420,7 @@ static void draw_field(U8 field_it)
 
 static void draw_instr()
 {
-    U8 active = IS_BOX_ACTIVE(INSTR_BOX);
     U8 field_it = 0;
-    draw_border(XPOS - 1, YPOS - 1, XPOS + 11, YPOS + 16, active);
     gotoxy(XPOS, 0);
     cputs("instr ");
     print_hex(s_curr_instr_no);

@@ -25,7 +25,6 @@ THE SOFTWARE. */
 #include <string.h>
 
 #include "boxes.h"
-#include "border.h"
 #include "chain.h"
 #include "cursor.h"
 #include "defines.h"
@@ -159,11 +158,8 @@ static U8 cur_screen_row()
 
 static void draw_phrase_border()
 {
-    U8 active = IS_BOX_ACTIVE(PHRASE_BOX);
-    draw_border(PHRASE_X, PHRASE_Y, PHRASE_X + PHRASE_BOX_WIDTH, PHRASE_Y + PHRASE_BOX_HEIGHT, active);
-
     gotoxy(PHRASE_X + 1, PHRASE_Y);
-    if (active) textcolor(COLOR_GREEN);
+    textcolor(COLOR_GREEN);
     cputs("phrase ");
     print_hex(VIEW_PHRASE);
 }

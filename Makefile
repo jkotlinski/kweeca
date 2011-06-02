@@ -32,7 +32,7 @@ all:   	kweeca
 	@echo $<
 	@$(AS) $(basename $<).s
 
-OBJS = kweeca.o phrase.o player.o border.o cursor.o print.o global.o irq.o alloc.o file.o mem.o chain.o song.o boxes.o status.o player_c.o kbd.o sprites.o instr.o math.o
+OBJS = kweeca.o phrase.o player.o cursor.o print.o global.o irq.o alloc.o file.o mem.o chain.o song.o boxes.o status.o player_c.o kbd.o sprites.o instr.o math.o
 
 -include $(OBJS:%.o=$(DEPDIR)/%.u)
 
@@ -53,5 +53,5 @@ run: kweeca
 
 .PHONY:	clean
 clean:
-	rm -f *~ *.map *.o *.lbl *.prg *.lst *.a *.u
+	rm -f *~ *.map *.o *.lbl *.prg *.lst *.a *.u .dep/*
 	

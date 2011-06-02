@@ -23,7 +23,6 @@ THE SOFTWARE. */
 #include <conio.h>
 
 #include "alloc.h"
-#include "border.h"
 #include "boxes.h"
 #include "chain.h"
 #include "cursor.h"
@@ -102,9 +101,6 @@ static void draw_row_number()
 
 static void draw_song_border()
 {
-    U8 active = IS_BOX_ACTIVE(SONG_BOX);
-    draw_border(SONG_X, SONG_Y, SONG_X + SONG_BOX_WIDTH, SONG_Y + SONG_BOX_HEIGHT, active);
-
     gotoxy(SONG_X + 1, SONG_Y);
     textcolor(title_color());
     cputs("song");
