@@ -271,6 +271,7 @@ U8 song_handle_key(U8 key)
 
         case CH_CURS_RIGHT:
             if (KEY_LSHIFT) {
+                VIEW_CHAIN = get_cur_chain();
                 switch_screen(CHAIN_SCREEN);
                 break;
             } else {

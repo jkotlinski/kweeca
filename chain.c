@@ -341,6 +341,7 @@ U8 chain_handle_key(U8 key)
 
         case CH_CURS_RIGHT:
             if (KEY_LSHIFT) {
+                VIEW_PHRASE = get_phrase();
                 switch_screen(PHRASE_SCREEN);
             } else {
                 return 0;
