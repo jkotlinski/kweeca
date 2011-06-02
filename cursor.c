@@ -146,17 +146,16 @@ void init_play_indicators()
     // Change screen X offset, to give some space for sprites to the left of column 0.
     VIC.ctrl2 |= 2; 
 
-    for (it = 0; it < PI_COUNT; ++it)
-    {
+    for (it = 0; it < PI_COUNT; ++it) {
         (&VIC.spr0_color)[it] = COLOR_YELLOW;
         *(U8*)(0x7f8 + it) = (SPRITE_OFFSET >> 6);
-    }   
+    }
 #define SCREEN_LEFT 0x18
 #define SCREEN_TOP 0x32
 #define SPRITE_X_FROM_COL(c) ((c) * 8 + SCREEN_LEFT)
-    PI_SONG_X0 = SPRITE_X_FROM_COL(0);
-    PI_SONG_X1 = SPRITE_X_FROM_COL(3);
-    PI_SONG_X2 = SPRITE_X_FROM_COL(6);
+    PI_SONG_X0 = SPRITE_X_FROM_COL(SONG_X);
+    PI_SONG_X1 = SPRITE_X_FROM_COL(SONG_X + 3);
+    PI_SONG_X2 = SPRITE_X_FROM_COL(SONG_X + 6);
     PI_CHAIN_X = SPRITE_X_FROM_COL(CHAIN_X);
     PI_PHRASE_X = SPRITE_X_FROM_COL(PHRASE_X);
 
@@ -169,8 +168,7 @@ void init_play_indicators()
 #define PI_CHAIN_Y VIC.spr3_y
 #define PI_PHRASE_Y VIC.spr4_y
 
-static U8 song_y_to_screen(U8 ch)
-{
+static U8 song_y_to_screen(U8 ch) {
     U8 row = (int)(SONG_CHAIN_PTR[ch] - ch) / 3;
     return SCREEN_TOP + 8 * (1 + row - g_song_y_offset);
 }
@@ -180,33 +178,33 @@ void play_indicator_tick()
     VIC.spr_ena = 0;
     if (!g_playing)
         return;
-    switch (PLAYMODE)
-    {
+    switch (PLAYMODE) {
         case PLAYMODE_SONG:
-            if (CH_ACTIVE[0])
-            {
-                PI_SONG_Y0 = song_y_to_screen(0);
-                VIC.spr_ena |= (1 << PI_SONG0);
-            }
-            if (CH_ACTIVE[1]) 
-            {
-                PI_SONG_Y1 = song_y_to_screen(1);
-                VIC.spr_ena |= (1 << PI_SONG1);
-            }
-            if (CH_ACTIVE[2]) 
-            {
-                PI_SONG_Y2 = song_y_to_screen(2);
-                VIC.spr_ena |= (1 << PI_SONG2);
+            if (g_cur_screen == SONG_SCREEN) {
+                if (CH_ACTIVE[0]) {
+                    PI_SONG_Y0 = song_y_to_screen(0);
+                    VIC.spr_ena |= (1 << PI_SONG0);
+                }
+                if (CH_ACTIVE[1]) {
+                    PI_SONG_Y1 = song_y_to_screen(1);
+                    VIC.spr_ena |= (1 << PI_SONG1);
+                }
+                if (CH_ACTIVE[2]) {
+                    PI_SONG_Y2 = song_y_to_screen(2);
+                    VIC.spr_ena |= (1 << PI_SONG2);
+                }
             }
         case PLAYMODE_CHAIN:
-            if (CH_ACTIVE[EDIT_CH] && ACTIVE_CHAIN[EDIT_CH] == VIEW_CHAIN)
-            {
+            if (g_cur_screen == CHAIN_SCREEN &&
+                    CH_ACTIVE[EDIT_CH] &&
+                    ACTIVE_CHAIN[EDIT_CH] == VIEW_CHAIN) {
                 VIC.spr_ena |= 1 << PI_CHAIN;
                 PI_CHAIN_Y = SCREEN_TOP + 8 * (1 + (CHAIN_PHRASE_PTR_LSB[EDIT_CH] & 0xf));
             }
         default: // = phrase
-            if (CH_ACTIVE[EDIT_CH] && ACTIVE_PHRASE[EDIT_CH] == VIEW_PHRASE)
-            {
+            if (g_cur_screen == PHRASE_SCREEN &&
+                    CH_ACTIVE[EDIT_CH] &&
+                    ACTIVE_PHRASE[EDIT_CH] == VIEW_PHRASE) {
                 VIC.spr_ena |= 1 << PI_PHRASE;
                 PI_PHRASE_Y = SCREEN_TOP + 8 * (1 + (PHRASE_NOTE_PTR_LSB[EDIT_CH] & 0xf));
             }
