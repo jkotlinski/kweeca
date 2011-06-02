@@ -115,7 +115,6 @@ static void move_cursor_down()
     refresh_mark();
 }
 
-/*
 static void screen_down() {
     U8 i;
     for (i = 0; i < 16; ++i)
@@ -127,7 +126,6 @@ static void screen_up() {
     for (i = 0; i < 16; ++i)
         move_cursor_up();
 }
-*/
 
 // Expand vertically. Return 0 if selection was already expanded, otherwise 1.
 static U8 mark_vertical_expand()
@@ -303,20 +301,21 @@ void screens_handle_key(U8 key)
             multi_tweak(0xffu);
             break;
 
-        /* case CH_MYDOWN_SHIFTED:
-            screen_down();
-            break;
-
-        case CH_MYUP_SHIFTED:
-            screen_up();
-            break; */
 
         case CH_CURS_DOWN:
-            move_cursor_down();
+            if (KEY_LSHIFT) {
+                screen_down();
+            } else {
+                move_cursor_down();
+            }
             break;
 
         case CH_CURS_UP:
-            move_cursor_up();
+            if (KEY_LSHIFT) {
+                screen_up();
+            } else {
+                move_cursor_up();
+            }
             break;
 
         case CH_CURS_LEFT:

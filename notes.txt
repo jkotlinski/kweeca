@@ -1,13 +1,6 @@
 Music editor for C64. Written in cc65/ca65.
 Initial check-in: 2009-07-20.
 
-NOTE: If running VICE on Mac OS X, make sure you use the
-native Cocoa version and positional keyboard (osx_pos.vkm).
-
-
-US/UK KEYBOARD:
-
-shift + @/; = screen up/down
 
 CUT/PASTE
 
@@ -20,10 +13,6 @@ m, m, m, m = stop marking
 leftarrow = stop marking
 x or del = cut
 v or inst = paste
-
-f3 = purge (TODO!)
-f5 = load
-f7 = save
 
 
 BUGS
@@ -45,8 +34,6 @@ $7380-$738f: chain alloc table
 $7390-$739f: phrase alloc table
 $73a0-$73a3: instr alloc table
 
-
----
 
 /// COMMANDS
 
