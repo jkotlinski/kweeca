@@ -24,7 +24,7 @@ THE SOFTWARE. */
 #include "types.h"
 #include "screen_data.h"
 
-void handle_song_screen_enter();
+void song_startstop();
 
 extern const ScreenData k_song_screen_data;
 

@@ -265,11 +265,9 @@ U8 song_handle_key(U8 key)
         return 1;
 
     switch (key) {
-            /*
         case CH_ENTER:
             song_startstop();
             break;
-            */
 
         case CH_SCREEN_RIGHT:
             switch_screen(CHAIN_SCREEN);

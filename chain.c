@@ -297,25 +297,23 @@ U8 chain_handle_key(U8 key)
     if (handle_dec_entry(key))
         return 1;
     switch (key) {
-            /*
         case CH_ENTER | CH_SHIFT:
             song_startstop();
             break;
 
         case CH_ENTER:
-            if (PLAYMODE != PLAYMODE_CHAIN)
+            if (PLAYMODE != PLAYMODE_CHAIN) {
                 player_stop();
-            if (!g_playing)
-            {
+            }
+            if (g_playing) {
+                player_stop();
+            } else {
                 PCC = EDIT_CH;
                 play_chain(VIEW_CHAIN, CUR_ROW_CHAIN);
                 PLAYMODE = PLAYMODE_CHAIN;
                 g_playing = 1;
             }
-            else
-                player_stop();
             break;
-            */
 
         case ' ':
             handle_space();

@@ -495,12 +495,25 @@ U8 phrase_handle_key(U8 key)
         return 1;
 
     switch (key) {
-            /*
         case CH_ENTER | CH_SHIFT:
-            handle_song_screen_enter();
+            song_startstop();
             break;
 
         case CH_ENTER:
+            if (PLAYMODE != PLAYMODE_PHRASE)
+                player_stop();
+            if (!g_playing) {
+                player_init();
+                PCC = EDIT_CH;
+                play_phrase(VIEW_PHRASE);
+                PLAYMODE = PLAYMODE_PHRASE;
+                g_playing = 1;
+            }
+            else
+                player_stop();
+            break;
+
+        case CH_STOP:
             if (PLAYMODE != PLAYMODE_PHRASE)
                 player_stop();
             if (!g_playing)
@@ -514,7 +527,6 @@ U8 phrase_handle_key(U8 key)
             else
                 player_stop();
             break;
-            */
 
         case CH_SCREEN_LEFT:
             switch_screen(CHAIN_SCREEN);
