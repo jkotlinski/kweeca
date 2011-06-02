@@ -208,7 +208,7 @@ static const Field* get_curr_field() { return &fields[s_curr_field]; }
 static void cur_left();
 static void cur_right();
 
-#define XPOS 25
+#define XPOS 11
 #define YPOS 1
 
 static void print_value(const Field* field)
@@ -419,6 +419,7 @@ static void draw_instr()
 {
     U8 field_it = 0;
     gotoxy(XPOS, 0);
+    textcolor(COLOR_GREEN);
     cputs("instr ");
     print_hex(s_curr_instr_no);
     gotoxy(XPOS + 6, YPOS + 1);
