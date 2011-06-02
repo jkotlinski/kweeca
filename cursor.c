@@ -42,10 +42,9 @@ static U8 cursor_x;
 static U8 cursor_y;
 static U8 cursor_w = 1;
 
-static void draw_cursor(U8 invert)
-{
-    paint_screen(cursor_x, cursor_y,
-            cursor_x + cursor_w - 1, 
+static void draw_cursor(U8 invert) {
+    paint_box(cursor_x, cursor_y,
+            cursor_x + cursor_w - 1,
             cursor_y, invert);
 }
 
@@ -102,7 +101,7 @@ static void paint_mark(U8 invert)
     {
         const U8 x = g_cur_screen_data->column_x[col];
         const U8 w = g_cur_screen_data->column_w[col];
-        paint_screen(x, row_min, x + w - 1, row_max, invert);
+        paint_box(x, row_min, x + w - 1, row_max, invert);
         ++col;
     }
 }

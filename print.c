@@ -73,7 +73,7 @@ void print_hex_ff(U8 val)
         print_hex(val);
 }
 
-void paint_screen(U8 x1, U8 y1, U8 x2, U8 y2, U8 inverse)
+void paint_box(U8 x1, U8 y1, U8 x2, U8 y2, U8 inverse)
 {
     assert(x1 <= x2);
     assert(y1 <= y2);
