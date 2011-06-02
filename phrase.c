@@ -51,7 +51,7 @@ THE SOFTWARE. */
 const char commands[] = "dfg";
 #define CMD_COUNT 3
 
-const U8 k_cmd_max_arg[] = {
+const U8 k_cmd_max_arg[CMD_COUNT] = {
     0xf, // delay
     0xff, // filter cutoff
     0xff // groove
@@ -468,7 +468,6 @@ static U8 handle_instr_entry(U8 key)
 static U8 handle_arg_entry(U8 key)
 {
     U8 status = get_hex_from_keyboard(key, k_cmd_max_arg[get_cmd()]);
-    STATIC_ASSERT(sizeof(k_cmd_max_arg) == CMD_COUNT);
     if (status != HEXGET_IDLE)
     {
         last_input_arg[EDIT_CH] = g_hexget_value;
