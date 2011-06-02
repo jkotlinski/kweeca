@@ -51,7 +51,7 @@ void print_note(U8 note) {
         cputs("++ ");
     } else {
         U8 octave = note / 12;
-        note = note - (octave * 12);
+        note -= octave * 12;
         cputc(notes[note]);
         print_nibble(octave);
         cputc(sharps[note]);
