@@ -22,12 +22,12 @@ THE SOFTWARE. */
 #define _PHRASE_H
 
 #include "types.h"
-#include "box_data.h"
+#include "screen_data.h"
 
 void view_phrase(U8 phrase);
 
 extern U8 VIEW_PHRASE;
 
-extern const BoxData k_phrase_box_data;
+extern const ScreenData k_phrase_screen_data;
 
 #endif // _PHRASE_H

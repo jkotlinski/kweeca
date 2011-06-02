@@ -22,7 +22,7 @@ THE SOFTWARE. */
 #define _CURSOR_H
 
 #include "types.h"
-#include "box_data.h"
+#include "screen_data.h"
 
 void blink_cursor();
 void reset_blink();
@@ -34,7 +34,7 @@ void move_cursor(U8 col, U8 row, U8 w);
 void cursor_tick();
 
 // Marking.
-void setup_marking(const BoxData* box_data);
+void setup_marking(const ScreenData* screen_data);
 void refresh_mark();
 void clear_mark();
 

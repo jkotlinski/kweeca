@@ -42,7 +42,6 @@ THE SOFTWARE. */
 #define CH_LEFTARROW 0x5f
 
 #define COLOR_TITLE COLOR_GREEN
-#define COLOR_INACTIVE COLOR_GRAY1
 
 // In the future, maybe use different colors for different screens?
 // If so, compare box with g_cur_box.

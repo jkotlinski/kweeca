@@ -22,7 +22,7 @@ THE SOFTWARE. */
 #define _INSTR_H
 
 #include "types.h"
-#include "box_data.h"
+#include "screen_data.h"
 
 // sizeof(INSTR) must be less than 0x10!
 typedef struct
@@ -41,7 +41,7 @@ typedef struct
     unsigned int automate : 1;
 } Instr;
 
-extern const BoxData k_instr_box_data;
+extern const ScreenData k_instr_screen_data;
 
 void view_instr(U8 instr);
 

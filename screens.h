@@ -18,43 +18,43 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE. */
 
-#ifndef _BOXES_H
-#define _BOXES_H
+#ifndef _SCREENES_H
+#define _SCREENES_H
 
 #include "types.h"
-#include "box_data.h"
+#include "screen_data.h"
 
 typedef enum {
-    SONG_BOX,
-    CHAIN_BOX,
-    PHRASE_BOX,
-    INSTR_BOX,
-    BOX_COUNT
-} BOX_ID;
-extern U8 g_cur_box;
+    SONG_SCREEN,
+    CHAIN_SCREEN,
+    PHRASE_SCREEN,
+    INSTR_SCREEN,
+    SCREEN_COUNT
+} SCREEN_ID;
+extern U8 g_cur_screen;
 
-#define IS_BOX_ACTIVE(a) (a == g_cur_box)
+#define IS_SCREEN_ACTIVE(a) (a == g_cur_screen)
 
-void switch_to_box(BOX_ID id);
+void switch_screen(SCREEN_ID id);
 
-void boxes_handle_key(U8 key);
+void screens_handle_key(U8 key);
 
-extern U8 cur_rows[BOX_COUNT];
-#define CUR_ROW_SONG cur_rows[SONG_BOX]
-#define CUR_ROW_PHRASE cur_rows[PHRASE_BOX]
-#define CUR_ROW_CHAIN cur_rows[CHAIN_BOX]
-extern U8 cur_cols[BOX_COUNT];
-#define CUR_COL_SONG cur_cols[SONG_BOX]
-#define CUR_COL_PHRASE cur_cols[PHRASE_BOX]
-#define CUR_COL_CHAIN cur_cols[CHAIN_BOX]
+extern U8 cur_rows[SCREEN_COUNT];
+#define CUR_ROW_SONG cur_rows[SONG_SCREEN]
+#define CUR_ROW_PHRASE cur_rows[PHRASE_SCREEN]
+#define CUR_ROW_CHAIN cur_rows[CHAIN_SCREEN]
+extern U8 cur_cols[SCREEN_COUNT];
+#define CUR_COL_SONG cur_cols[SONG_SCREEN]
+#define CUR_COL_PHRASE cur_cols[PHRASE_SCREEN]
+#define CUR_COL_CHAIN cur_cols[CHAIN_SCREEN]
 
-#define CUR_COL cur_cols[g_cur_box]
-#define CUR_ROW cur_rows[g_cur_box]
-#define COLUMN_COUNT box_data[g_cur_box]->column_count
+#define CUR_COL cur_cols[g_cur_screen]
+#define CUR_ROW cur_rows[g_cur_screen]
+#define COLUMN_COUNT screen_data[g_cur_screen]->column_count
 
 U8 cursor_y_offset();
 
-extern const BoxData* g_cur_box_data;
+extern const ScreenData* g_cur_screen_data;
 
 // Get a hex from keyboard. Return status.
 U8 get_hex_from_keyboard(U8 key, U8 max_value);
@@ -67,6 +67,6 @@ void mark();
 void paste();
 void cut_marked();
 
-void reset_boxes();
+void reset_screens();
 
-#endif // _BOXES_H
+#endif // _SCREENES_H

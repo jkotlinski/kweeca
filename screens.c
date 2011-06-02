@@ -35,37 +35,37 @@ THE SOFTWARE. */
 #include "phrase.h"
 #include "instr.h"
 
-U8 g_cur_box = SONG_BOX;
-U8 cur_rows[BOX_COUNT];
-U8 cur_cols[BOX_COUNT];
+U8 g_cur_screen = SONG_SCREEN;
+U8 cur_rows[SCREEN_COUNT];
+U8 cur_cols[SCREEN_COUNT];
 
-const BoxData* g_cur_box_data;
+const ScreenData* g_cur_screen_data;
 
 static handler_fn key_handler;
 
-static const BoxData* const box_data[] =
+static const ScreenData* const screen_data[] =
 {
-    &k_song_box_data,
-    &k_chain_box_data,
-    &k_phrase_box_data,
-    &k_instr_box_data
+    &k_song_screen_data,
+    &k_chain_screen_data,
+    &k_phrase_screen_data,
+    &k_instr_screen_data
 };
 
-void redraw_all_boxes()
+void redraw_all_screenes()
 {
     U8 it;
-    for (it = 0; it < BOX_COUNT; ++it)
-        if (g_cur_box != it)
-            box_data[it]->redraw();
-    box_data[g_cur_box]->redraw(); // Draw active box last.
+    for (it = 0; it < SCREEN_COUNT; ++it)
+        if (g_cur_screen != it)
+            screen_data[it]->redraw();
+    screen_data[g_cur_screen]->redraw(); // Draw active screen last.
 }
 
 void refresh_cursor()
 {
-    if (g_cur_box_data->refresh_cursor)
-        g_cur_box_data->refresh_cursor();
+    if (g_cur_screen_data->refresh_cursor)
+        g_cur_screen_data->refresh_cursor();
     else
-        move_cursor(g_cur_box_data->column_x[CUR_COL], 1 + CUR_ROW - cursor_y_offset(), g_cur_box_data->column_w[CUR_COL]);
+        move_cursor(g_cur_screen_data->column_x[CUR_COL], 1 + CUR_ROW - cursor_y_offset(), g_cur_screen_data->column_w[CUR_COL]);
 }
 
 static void stop_marking()
@@ -74,22 +74,22 @@ static void stop_marking()
     g_marking = 0;
     CUR_COL = g_clip_x1;
     CUR_ROW = g_clip_y1;
-    if (g_cur_box_data->y_pos_validator)
-        g_cur_box_data->y_pos_validator();
+    if (g_cur_screen_data->y_pos_validator)
+        g_cur_screen_data->y_pos_validator();
     refresh_cursor();
     clear_mark();
 }
 
 #include <stdio.h>
 
-void switch_to_box(BOX_ID box)
+void switch_screen(SCREEN_ID screen)
 {
-    g_cur_box_data = box_data[box];
+    g_cur_screen_data = screen_data[screen];
 
     stop_marking();
-    g_cur_box = box;
-    key_handler = g_cur_box_data->key_handler;
-    redraw_all_boxes();
+    g_cur_screen = screen;
+    key_handler = g_cur_screen_data->key_handler;
+    redraw_all_screenes();
     refresh_cursor();
 }
 
@@ -101,8 +101,8 @@ static void move_cursor_up()
     {
         return;
     }
-    assert(g_cur_box_data->cur_up_handler);
-    g_cur_box_data->cur_up_handler();
+    assert(g_cur_screen_data->cur_up_handler);
+    g_cur_screen_data->cur_up_handler();
     refresh_cursor();
     refresh_mark();
 }
@@ -115,8 +115,8 @@ static void move_cursor_down()
     {
         return;
     }
-    assert(g_cur_box_data->cur_down_handler);
-    g_cur_box_data->cur_down_handler();
+    assert(g_cur_screen_data->cur_down_handler);
+    g_cur_screen_data->cur_down_handler();
     refresh_cursor();
     refresh_mark();
 }
@@ -173,7 +173,7 @@ static void mark()
     {
         // Start mark.
         g_marking = 1;
-        g_clip_type = g_cur_box;
+        g_clip_type = g_cur_screen;
         g_clip_x1 = CUR_COL;
         g_clip_x2 = CUR_COL;
         g_clip_y1 = CUR_ROW;
@@ -186,12 +186,12 @@ static void mark()
 
 void cut_marked()
 {
-    assert(g_clip_type == g_cur_box);
+    assert(g_clip_type == g_cur_screen);
 
     sort(&g_clip_x1, &g_clip_x2);
     sort(&g_clip_y1, &g_clip_y2);
 
-    g_clip_x2 = MAX(g_cur_box_data->min_allowed_lift_col_2, g_clip_x2);
+    g_clip_x2 = MAX(g_cur_screen_data->min_allowed_lift_col_2, g_clip_x2);
 
     CUR_ROW = g_clip_y1;
 
@@ -200,7 +200,7 @@ void cut_marked()
         CUR_COL = g_clip_x1;
         while (CUR_COL <= g_clip_x2)
         {
-            g_cur_box_data->lift_col_handler();
+            g_cur_screen_data->lift_col_handler();
             ++CUR_COL;
         }
         ++CUR_ROW;
@@ -215,9 +215,9 @@ static void paste()
 {
     U8 src_y = g_clip_y1;
     U8 prev_col = CUR_COL;
-    const paste_col_fn paster = g_cur_box_data->paste_col_handler;
+    const paste_col_fn paster = g_cur_screen_data->paste_col_handler;
 
-    if (g_marking || g_clip_type != g_cur_box || !paster)
+    if (g_marking || g_clip_type != g_cur_screen || !paster)
         return;
 
     while (src_y <= g_clip_y2)
@@ -231,8 +231,8 @@ static void paste()
 
             ++CUR_COL;
         }
-        if (g_cur_box_data->paste_advance_row)
-            g_cur_box_data->paste_advance_row();
+        if (g_cur_screen_data->paste_advance_row)
+            g_cur_screen_data->paste_advance_row();
         else
         {
             ++CUR_ROW;
@@ -253,7 +253,7 @@ static void multi_tweak(U8 val)
     U8 col2 = MAX(g_clip_x1, g_clip_x2);
     U8 row1 = MIN(g_clip_y1, g_clip_y2);
     U8 row2 = MAX(g_clip_y1, g_clip_y2);
-    tweak_handler_fn tweak_handler = g_cur_box_data->tweak_handler;
+    tweak_handler_fn tweak_handler = g_cur_screen_data->tweak_handler;
 
     assert(tweak_handler);
 
@@ -275,7 +275,7 @@ static void multi_tweak(U8 val)
     refresh_mark();
 }
 
-void boxes_handle_key(U8 key)
+void screens_handle_key(U8 key)
 {
     if (key == ' ')
         ++g_space_tap_count;
@@ -376,18 +376,18 @@ U8 get_hex_from_keyboard(U8 key, U8 max_value)
 
 U8 cursor_y_offset()
 {
-    return g_cur_box == SONG_BOX ? g_song_y_offset : 0;
+    return g_cur_screen == SONG_SCREEN ? g_song_y_offset : 0;
 }
 
-void reset_boxes()
+void reset_screens()
 {
     U8 i = 0;
-    for (; i < BOX_COUNT; ++i)
+    for (; i < SCREEN_COUNT; ++i)
     {
         cur_cols[i] = 0;
         cur_rows[i] = 0;
     }
     g_song_y_offset = 0;
-    switch_to_box(SONG_BOX);
+    switch_screen(SONG_SCREEN);
     s_hexget_active = 0;
 }

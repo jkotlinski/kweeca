@@ -48,7 +48,7 @@ static void draw_song();
 
 static const U8 song_screen_col[] = { SONG_X + 1, SONG_X + 4, SONG_X + 7 };
 static const U8 song_col_width[] = { 2, 2, 2 };
-const BoxData k_song_box_data =
+const ScreenData k_song_screen_data =
 {
     3, // Column count.
     0, // Min lift col 2.
@@ -87,22 +87,17 @@ U8 song_y_offset()
 
 static U8 last_chain[3];
 
-static U8 title_color()
-{
-    return IS_BOX_ACTIVE(SONG_BOX) ? COLOR_TITLE : COLOR_INACTIVE;
-}
-
 static void draw_row_number()
 {
     gotoxy(SONG_X + 6, SONG_Y);
-    textcolor(title_color());
+    textcolor(COLOR_TITLE);
     print_hex(CUR_ROW_SONG);
 }
 
 static void draw_song_border()
 {
     gotoxy(SONG_X + 1, SONG_Y);
-    textcolor(title_color());
+    textcolor(COLOR_TITLE);
     cputs("song");
     draw_row_number();
 }
@@ -243,7 +238,7 @@ static void cut_step()
     g_clip_x2 = 0;
     g_clip_y1 = 0;
     g_clip_y2 = 0;
-    g_clip_type = SONG_BOX;
+    g_clip_type = SONG_SCREEN;
     set_chain(0xffu);
 }
 
@@ -265,7 +260,7 @@ static U8 handle_chain_entry(U8 key)
     return status == HEXGET_ACTIVE;
 }
 
-void handle_song_box_enter()
+void handle_song_screen_enter()
 {
     if (PLAYMODE != PLAYMODE_SONG)
         player_stop();
@@ -291,11 +286,11 @@ U8 song_handle_key(U8 key)
             break;
 
         case CH_ENTER:
-            handle_song_box_enter();
+            handle_song_screen_enter();
             break;
 
         case CH_SCREEN_RIGHT:
-            switch_to_box(CHAIN_BOX);
+            switch_screen(CHAIN_SCREEN);
             break;
 
         case ' ':

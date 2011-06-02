@@ -28,7 +28,7 @@ void print_hex(U8 val);
 void print_note(U8 note);
 void print_hex_ff(U8 val); // Print "--" if val == 0xff, otherwise hex.
 
-void paint_box(U8 x1, U8 y1, U8 x2, U8 y2, U8 inverse);
+void paint_screen(U8 x1, U8 y1, U8 x2, U8 y2, U8 inverse);
 
 #endif // _PRINT_H
 

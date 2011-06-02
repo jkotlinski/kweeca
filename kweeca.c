@@ -64,7 +64,7 @@ void init()
     VIC.bordercolor = COLOR_BLACK;
     *(U8*)0x28a = 0x80; // Repeat all keys.
     textcolor(COLOR_YELLOW);
-    reset_boxes();
+    reset_screens();
     show_status_msg(MSG_HELLO);
     init_play_indicators();
 }
@@ -77,7 +77,7 @@ void handle_key(U8 key)
     {
         case CH_F5:
             load_song();
-            reset_boxes();
+            reset_screens();
             return;
 
         case CH_F7:
@@ -85,7 +85,7 @@ void handle_key(U8 key)
             return;
     }
 
-    boxes_handle_key(key);
+    screens_handle_key(key);
     reset_blink();
 }
 

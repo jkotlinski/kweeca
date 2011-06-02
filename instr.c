@@ -277,7 +277,7 @@ static U8 instr_handle_key(U8 key)
     switch (key)
     {
         case CH_SCREEN_LEFT:
-            switch_to_box(PHRASE_BOX);
+            switch_screen(PHRASE_SCREEN);
             return 1;
 
         case CH_CURS_LEFT:
@@ -310,7 +310,7 @@ static void cur_down();
 static void cur_up();
 static void handle_tweak(U8 diff);
 
-static const BoxData k_instr_box_data =
+static const ScreenData k_instr_screen_data =
 {
     2, // Column count.
     0,
@@ -408,10 +408,7 @@ static void draw_field(U8 field_it)
     const Field* field = &fields[field_it];
     U8 col_x = (field->column == CRight) ? XPOS + COL2X : XPOS;
 
-    if (IS_BOX_ACTIVE(INSTR_BOX))
-    {
-        textcolor(field->enabled ? COLOR_WHITE : COLOR_GRAY1);
-    }
+    textcolor(field->enabled ? COLOR_WHITE : COLOR_GRAY1);
 
     print_value(field);
     gotox(col_x);

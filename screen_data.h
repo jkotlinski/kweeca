@@ -18,8 +18,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE. */
 
-#ifndef _BOX_DATA_H
-#define _BOX_DATA_H
+#ifndef _SCREEN_DATA_H
+#define _SCREEN_DATA_H
 
 #include "types.h"
 
@@ -50,6 +50,6 @@ typedef struct {
     const y_pos_validator_fn y_pos_validator;
     const refresh_cursor_fn refresh_cursor;
     const redraw_fn redraw;
-} BoxData;
+} ScreenData;
 
 #endif

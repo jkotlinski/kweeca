@@ -22,7 +22,7 @@ THE SOFTWARE. */
 #define _CHAIN_H
 
 #include "types.h"
-#include "box_data.h"
+#include "screen_data.h"
 
 extern U8 VIEW_CHAIN;
 
@@ -34,6 +34,6 @@ U8 get_next_phrase();
 // Clone VIEW_CHAIN. Return number of new chain, or 0xff if out of mem.
 U8 clone_chain();
 
-extern const BoxData k_chain_box_data;
+extern const ScreenData k_chain_screen_data;
 
 #endif // _CHAIN_H

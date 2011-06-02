@@ -45,8 +45,8 @@ THE SOFTWARE. */
 #define CMD_COL 2
 #define ARG_COL 3
 
-#define PHRASE_BOX_WIDTH 10
-#define PHRASE_BOX_HEIGHT 17
+#define PHRASE_SCREEN_WIDTH 10
+#define PHRASE_SCREEN_HEIGHT 17
 
 const char commands[] = "dfg";
 #define CMD_COUNT 3
@@ -81,7 +81,7 @@ static const U8 phrase_screen_col[] =
     PHRASE_X + 1 + 7 
 };
 static const U8 phrase_col_width[] = { 2, 2, 1, 2 };
-const BoxData k_phrase_box_data =
+const ScreenData k_phrase_screen_data =
 {
     4, // Column count.
     1, // Min lift col 2.
@@ -186,7 +186,7 @@ static void draw_phrase()
 {
     U8 y;
     draw_phrase_border();
-    TEXTCOLOR(PHRASE_BOX);
+    TEXTCOLOR(PHRASE_SCREEN);
     for (y = 0; y < 16; ++y)
     {
         U8 instr = get_instr_on_row(y);
@@ -513,7 +513,7 @@ U8 phrase_handle_key(U8 key)
             break;
 
         case CH_ENTER | CH_SHIFT:
-            handle_song_box_enter();
+            handle_song_screen_enter();
             break;
 
         case CH_ENTER:
@@ -532,11 +532,11 @@ U8 phrase_handle_key(U8 key)
             break;
 
         case CH_SCREEN_LEFT:
-            switch_to_box(CHAIN_BOX);
+            switch_screen(CHAIN_SCREEN);
             break;
 
         case CH_SCREEN_RIGHT:
-            switch_to_box(INSTR_BOX);
+            switch_screen(INSTR_SCREEN);
             break;
 
         case ' ':

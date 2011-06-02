@@ -22,11 +22,11 @@ THE SOFTWARE. */
 #define _SONG_H
 
 #include "types.h"
-#include "box_data.h"
+#include "screen_data.h"
 
-void handle_song_box_enter();
+void handle_song_screen_enter();
 
-extern const BoxData k_song_box_data;
+extern const ScreenData k_song_screen_data;
 
 extern U8 g_song_y_offset;
 

@@ -58,7 +58,7 @@ static const U8 chain_screen_col[] =
     CHAIN_X + 1 + 3
 };
 static const U8 chain_col_width[] = { 2, 2 };
-const BoxData k_chain_box_data =
+const ScreenData k_chain_screen_data =
 {
     2, // Column count.
     1, // Min lift col 2.
@@ -322,7 +322,7 @@ U8 chain_handle_key(U8 key)
             break;
 
         case CH_ENTER | CH_SHIFT:
-            handle_song_box_enter();
+            handle_song_screen_enter();
             break;
 
         case CH_ENTER:
@@ -364,12 +364,12 @@ U8 chain_handle_key(U8 key)
             break;
 
         case CH_SCREEN_RIGHT:
-            switch_to_box(PHRASE_BOX);
+            switch_screen(PHRASE_SCREEN);
             break;
         case CH_SCREEN_LEFT:
-            switch_to_box(SONG_BOX);
+            switch_screen(SONG_SCREEN);
             break;
-            
+
         default:
             return 0;
     }
